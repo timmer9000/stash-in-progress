@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stash — page not found</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#07070b">
+
+  <!-- App addresses that land on the website get forwarded to the app.
+       Every link Stash makes to an item is https://stash.info/v/<id> (on
+       purpose — it is saved inside people's notes), so those MUST keep
+       working now that the app lives on app.stash.info. Cloudflare Pages
+       serves this page for any address the site doesn't have.
+       Keep the app address logic in step with index.html. -->
+  <script>
+    (function () {
+      var h = location.hostname;
+      var app =
+        h === 'localhost' || h === '127.0.0.1' ? 'http://localhost:8089' :
+        /\.pages\.dev$/.test(h) ? 'https://app.retsyn.app' :
+        'https://app.' + h.replace(/^www\./, '');
+      window.STASH_APP = app;
+      var p = location.pathname;
+      if (/^\/(v\/|open$|login$|signup$)/.test(p)) {
+        location.replace(app + p + location.search + location.hash);
+      }
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <div class="glow" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b3"></span>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Stash home">
+      <img src="/img/logo.png" alt="" width="36" height="36">
+      <span>Stash</span>
+    </a>
+    <nav class="topnav" aria-label="Account">
+      <a class="btn btn-ghost btn-sm" data-app-href="/login" href="/login">Log in</a>
+      <a class="btn btn-primary btn-sm" data-app-href="/signup" href="/signup">Sign up</a>
+    </nav>
+  </header>
+
+  <main class="simple">
+    <h1>Nothing stashed <span class="grad">here.</span></h1>
+    <p>We couldn't find that page.</p>
+    <a class="btn btn-ghost btn-lg" href="/">Go to the home page</a>
+  </main>
+</body>
+</html>

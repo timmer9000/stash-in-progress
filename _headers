@@ -1,0 +1,20 @@
+# Cloudflare Pages response headers. https://developers.cloudflare.com/pages/configuration/headers/
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Pages: always ask the server, so a change (or the signed-in check) shows up right away.
+/
+  Cache-Control: no-cache
+/index.html
+  Cache-Control: no-cache
+/404.html
+  Cache-Control: no-cache
+
+# The old-app retirement file must never be served from a cache.
+/flutter_service_worker.js
+  Cache-Control: no-cache, no-store
+
+/img/*
+  Cache-Control: public, max-age=86400

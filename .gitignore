@@ -1,0 +1,5 @@
+# Everything committed here is published on the website, so keep junk out.
+Thumbs.db
+desktop.ini
+.DS_Store
+.claude/settings.local.json

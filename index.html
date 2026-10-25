@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stash — coming soon</title>
+  <meta name="description" content="Stash keeps your notes, tasks, events and ideas in one place. Our new home is on its way.">
+  <meta name="theme-color" content="#07070b">
+
+  <!-- Signed in? Skip the website and go straight to the app.
+       Runs first, before anything draws. Keep in step with 404.html.
+       See README.md, "The two rules", before changing anything here. -->
+  <script>
+    (function () {
+      var h = location.hostname;
+      // Where the app lives for THIS copy of the site:
+      //   stash.info → app.stash.info, retsyn.app → app.retsyn.app, retsyn.ai → app.retsyn.ai
+      //   localhost (local preview) → the dev app that restart-app.ps1 runs
+      //   *.pages.dev (Cloudflare preview links) → the dev app
+      var app =
+        h === 'localhost' || h === '127.0.0.1' ? 'http://localhost:8089' :
+        /\.pages\.dev$/.test(h) ? 'https://app.retsyn.app' :
+        'https://app.' + h.replace(/^www\./, '');
+      window.STASH_APP = app;
+      // The app sets this cookie on sign-in and deletes it on sign-out.
+      // Add ?home to the address to stay on the website while signed in.
+      var signedIn = /(?:^|;\s*)stash_signed_in=1(?:;|$)/.test(document.cookie);
+      var stay = /[?&]home(?:[=&]|$)/.test(location.search);
+      if (signedIn && !stay) location.replace(app + '/');
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css">
+  <script src="/site.js" defer></script>
+</head>
+<body>
+  <div class="glow" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+  </div>
+
+  <!-- Shown only if someone opens this WEBSITE as a home-screen app (site.js). -->
+  <div class="standalone-note" role="note">
+    <p>This icon opens the Stash <strong>website</strong>, not the app.</p>
+    <a class="btn btn-primary btn-sm" data-app-href="/">Open the Stash app</a>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="/?home" aria-label="Stash home">
+      <img src="/img/logo.png" alt="" width="36" height="36">
+      <span>Stash</span>
+    </a>
+    <nav class="topnav" aria-label="Account">
+      <a class="btn btn-ghost btn-sm" data-app-href="/login" href="/login">Log in</a>
+      <a class="btn btn-primary btn-sm" data-app-href="/signup" href="/signup">Sign up</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="logo-wrap">
+        <img class="logo" src="/img/logo.png" alt="Stash logo" width="240" height="240">
+      </div>
+      <p class="badge"><span class="dot" aria-hidden="true"></span>Coming soon</p>
+      <h1>Stash <span class="grad">everything.</span></h1>
+      <p class="lede">
+        Your notes, tasks, events and ideas in one place.
+        Capture in seconds, and find it the moment you need it.
+      </p>
+      <div class="cta">
+        <a class="btn btn-primary btn-lg" data-app-href="/signup" href="/signup">Sign up</a>
+        <a class="btn btn-ghost btn-lg" data-app-href="/login" href="/login">Log in</a>
+      </div>
+      <p class="fineprint">Our new home is on its way. Already using Stash? Log in to pick up where you left off.</p>
+      <a class="scroll-hint" href="#test-gallery" aria-label="Scroll down">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </section>
+
+    <!-- TEST ONLY — remove before launch (and delete img/test/).
+         About 22 MB of photos, loaded on every visit on purpose. They prove
+         that installing the app never takes the website with it: after
+         visiting this page and then installing Stash, the app's storage
+         must contain none of these files. -->
+    <section id="test-gallery" class="gallery">
+      <div class="gallery-head">
+        <h2>Test images</h2>
+        <p>About 22 MB of photos, here only to check that installing the app never brings the website along. Remove before launch.</p>
+      </div>
+      <div class="grid">
+        <img src="/img/test/buddy-01.jpg" alt="Test photo 1" loading="eager" decoding="async">
+        <img src="/img/test/buddy-02.jpg" alt="Test photo 2" loading="eager" decoding="async">
+        <img src="/img/test/buddy-03.jpg" alt="Test photo 3" loading="eager" decoding="async">
+        <img src="/img/test/buddy-04.jpg" alt="Test photo 4" loading="eager" decoding="async">
+        <img src="/img/test/buddy-05.jpg" alt="Test photo 5" loading="eager" decoding="async">
+        <img src="/img/test/buddy-06.jpg" alt="Test photo 6" loading="eager" decoding="async">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span data-year>2026</span> Stash</span>
+    <a href="mailto:ask@stash.info">ask@stash.info</a>
+  </footer>
+</body>
+</html>
