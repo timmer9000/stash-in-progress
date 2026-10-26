@@ -11,6 +11,10 @@
   Cache-Control: no-cache
 /404.html
   Cache-Control: no-cache
+/site.css
+  Cache-Control: no-cache
+/site.js
+  Cache-Control: no-cache
 
 # The old-app retirement file must never be served from a cache.
 /flutter_service_worker.js
