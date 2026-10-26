@@ -14,6 +14,7 @@
   --yellow: #ffcf4a;
   --sky: #5ec8ff;
   --violet: #9b5cf6;
+  --green: #3dffa0;  /* neon green for "Open Stash" */
   --brand-grad: linear-gradient(100deg, var(--pink) 0%, var(--orange) 38%, var(--yellow) 62%, var(--sky) 100%);
 
   --radius: 999px;
@@ -105,6 +106,13 @@ a { color: inherit; }
   -webkit-backdrop-filter: blur(8px);
 }
 .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.24); }
+
+.btn-neon {
+  color: #061a0f;
+  background: linear-gradient(100deg, #5dffb5 0%, var(--green) 55%, #1ee88a 100%);
+  box-shadow: 0 0 0 1px rgba(61, 255, 160, 0.35), 0 8px 28px -8px rgba(61, 255, 160, 0.8);
+}
+.btn-neon:hover { transform: translateY(-1px); box-shadow: 0 0 0 1px rgba(61, 255, 160, 0.5), 0 12px 36px -8px rgba(61, 255, 160, 0.95); }
 
 /* ── Top bar ───────────────────────────────────────────────────── */
 .topbar {
