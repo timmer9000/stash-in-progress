@@ -33,6 +33,6 @@ Then open http://localhost:8090. Add `?home` to the address if you are signed in
 | `404.html` | "Page not found", plus forwarding of app links |
 | `site.css` / `site.js` | Shared styles and helpers |
 | `_headers` | Cloudflare caching rules |
-| `img/` | Images. `img/test/` holds about 22 MB of TEST photos: delete it, and the "Test images" section in `index.html`, before launch. |
+| `img/` | Images (the logo). |
 
 Big media such as video or podcast audio should not go in this repo. Host it on YouTube, Vimeo, Cloudflare Stream or R2 and embed or link it. Cloudflare Pages rejects any single file over 25 MB.

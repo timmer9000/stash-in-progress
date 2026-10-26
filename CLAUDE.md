@@ -11,8 +11,7 @@ This is the Stash website: plain HTML, CSS and a little JavaScript. There is no 
    - `flutter_service_worker.js`. It is a cleanup file that removes the OLD app's offline copy from this address. Keep its name and location. Never add caching or a "fetch" handler to it.
    - The `data-app-href` attributes on buttons. `site.js` turns them into links to the app.
 3. **Don't change the design unless you are asked to.**
-4. **Leave `img/test/` and the "Test images" section of `index.html` alone.** The ~22 MB of photos are there on purpose, to test that installing the app never brings the website along. They come out before launch, and only when the site owner asks.
-5. **Don't touch anything outside this repo.**
+4. **Don't touch anything outside this repo.**
 
 ## Good to know
 
