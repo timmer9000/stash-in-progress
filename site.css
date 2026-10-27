@@ -291,3 +291,20 @@ h1 {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* Waitlist + contact forms (waitlist.html, contact.html) */
+.waitlist { width: min(440px, 100%); margin: 26px auto 0; text-align: left; display: grid; gap: 14px; }
+.waitlist label { display: grid; gap: 6px; font-size: 14px; font-weight: 600; color: var(--ink-soft); }
+.waitlist input, .waitlist textarea {
+  font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--line); border-radius: 16px;
+  padding: 12px 14px; width: 100%; box-sizing: border-box; resize: vertical;
+}
+.waitlist input:focus, .waitlist textarea:focus { outline: 2px solid var(--yellow); outline-offset: 1px; border-color: transparent; }
+.waitlist .cta { margin-top: 6px; }
+.form-error { color: var(--orange); font-size: 14px; margin: 0; }
+.waitlist-done h2 { margin: 26px 0 8px; font-size: 26px; }
+.fineprint a, .waitlist-done a, .form-error a { color: var(--sky); }
+.waitlist .cf-turnstile { justify-self: center; }
+.waitlist[hidden], .waitlist-done[hidden], .form-error[hidden] { display: none !important; }
+.gate-note { margin: 22px 0 10px; font-size: 18px; font-weight: 700; color: var(--yellow); letter-spacing: 0.01em; }

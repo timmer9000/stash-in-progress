@@ -31,6 +31,8 @@ Then open http://localhost:8090. Add `?home` to the address if you are signed in
 |---|---|
 | `index.html` | Home page (coming soon) |
 | `404.html` | "Page not found", plus forwarding of app links |
+| `waitlist.html` | Ask for a signup code (posts to the invites API) |
+| `contact.html` | Contact-us form, captcha gated with Cloudflare Turnstile (posts to the invites API). The site never shows an email address. |
 | `site.css` / `site.js` | Shared styles and helpers |
 | `_headers` | Cloudflare caching rules |
 | `img/` | Images (the logo). |

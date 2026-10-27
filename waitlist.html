@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Stash — coming soon</title>
+  <meta name="description" content="Ask for a Stash invite. We will email you a signup code.">
+  <meta name="theme-color" content="#07070b">
+
+  <!-- Signed in? Skip the website and go straight to the app.
+       Runs first, before anything draws. Keep in step with 404.html.
+       See README.md, "The two rules", before changing anything here. -->
+  <script>
+    (function () {
+      var h = location.hostname;
+      // Where the app lives for THIS copy of the site:
+      //   stash.info → app.stash.info, retsyn.app → app.retsyn.app, retsyn.ai → app.retsyn.ai
+      //   localhost (local preview) → the dev app that restart-app.ps1 runs
+      //   *.pages.dev (Cloudflare preview links) → the dev app
+      var app =
+        h === 'localhost' || h === '127.0.0.1' ? 'http://localhost:8089' :
+        /\.pages\.dev$/.test(h) ? 'https://app.retsyn.app' :
+        'https://app.' + h.replace(/^www\./, '');
+      window.STASH_APP = app;
+      // The app sets this cookie on sign-in and deletes it on sign-out.
+      // Add ?home to the address to stay on the website while signed in.
+      var signedIn = /(?:^|;\s*)stash_signed_in=1(?:;|$)/.test(document.cookie);
+      var stay = /[?&]home(?:[=&]|$)/.test(location.search);
+      if (signedIn && !stay) location.replace(app + '/');
+    })();
+  </script>
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/site.css?v=3">
+  <script src="/site.js?v=2" defer></script>
+</head>
+<body>
+  <div class="glow" aria-hidden="true">
+    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
+  </div>
+
+  <!-- Shown only if someone opens this WEBSITE as a home-screen app (site.js). -->
+  <div class="standalone-note" role="note">
+    <p>This icon opens the Stash <strong>website</strong>, not the app.</p>
+    <a class="btn btn-primary btn-sm" data-app-href="/">Open the Stash app</a>
+  </div>
+
+  <header class="topbar">
+    <a class="brand" href="/?home" aria-label="Stash home">
+      <img src="/img/logo.png" alt="" width="36" height="36">
+      <span>Stash</span>
+    </a>
+    <nav class="topnav" aria-label="Account">
+      <a class="btn btn-neon btn-sm" data-app-href="/" href="/">Open Stash</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="logo-wrap">
+        <img class="logo" src="/img/logo.png" alt="Stash logo" width="160" height="160">
+      </div>
+      <h1>Join the <span class="grad">waitlist.</span></h1>
+      <p class="lede">Stash is invite-only while we get it ready. Tell us a little about yourself and we'll email you a signup code.</p>
+
+      <form class="waitlist" id="waitlist" novalidate>
+        <label>Your name
+          <input name="name" type="text" autocomplete="name" required maxlength="120">
+        </label>
+        <label>Email address
+          <input name="email" type="email" autocomplete="email" required maxlength="200">
+        </label>
+        <label>Anything in particular you're interested in about Stash?
+          <textarea name="interest" rows="4" maxlength="2000"></textarea>
+        </label>
+        <p class="form-error" id="waitlist-error" hidden></p>
+        <div class="cta">
+          <button class="btn btn-primary btn-lg" type="submit">Request an invite</button>
+        </div>
+      </form>
+
+      <div class="waitlist-done" id="waitlist-done" hidden>
+        <h2>Thanks, you're on the list.</h2>
+        <p class="lede">We'll email your signup code soon. Already have one? <a data-app-href="/signup" href="/signup">Create your account</a>.</p>
+      </div>
+      <p class="fineprint">Already have a code? <a data-app-href="/signup" href="/signup">Sign up here</a>.</p>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      // Where the waitlist request goes: the invites API of THIS site's project.
+      var h = location.hostname.replace(/^www\./, '');
+      var api =
+        h === 'retsyn.ai'  ? 'https://invitesapi-z2zzikje6a-uc.a.run.app' :
+        h === 'stash.info' ? 'https://invitesapi-vjxyhmysuq-uc.a.run.app' :
+                             'https://invitesapi-oi53bwskkq-uc.a.run.app'; // retsyn.app, localhost, *.pages.dev
+      var form = document.getElementById('waitlist');
+      var err = document.getElementById('waitlist-error');
+      var done = document.getElementById('waitlist-done');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        err.hidden = true;
+        if (!name) { err.textContent = 'Please tell us your name.'; err.hidden = false; return; }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email address.'; err.hidden = false; return; }
+        var btn = form.querySelector('button');
+        btn.disabled = true; btn.textContent = 'Sending...';
+        fetch(api + '/api/invites/v1/waitlist/request', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: name, email: email, interest: form.interest.value.trim() })
+        }).then(function (r) { return r.json().then(function (j) { return { ok: r.ok, body: j }; }); })
+          .then(function (res) {
+            if (!res.ok) throw new Error((res.body && res.body.error) || 'Request failed');
+            form.hidden = true; done.hidden = false;
+          })
+          .catch(function (ex) {
+            err.innerHTML = 'Sorry, that did not go through. ' + String(ex.message || '').replace(/[<>&]/g, '') + ' Please try again, or <a href="/contact.html">contact us</a>.';
+            err.hidden = false; btn.disabled = false; btn.textContent = 'Request an invite';
+          });
+      });
+    })();
+  </script>
+
+  <footer class="footer">
+    <span>© <span data-year>2026</span> Stash</span>
+    <a href="/contact.html">Contact us</a>
+  </footer>
+</body>
+</html>

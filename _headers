@@ -11,6 +11,10 @@
   Cache-Control: no-cache
 /404.html
   Cache-Control: no-cache
+/waitlist.html
+  Cache-Control: no-cache
+/contact.html
+  Cache-Control: no-cache
 /site.css
   Cache-Control: no-cache
 /site.js
