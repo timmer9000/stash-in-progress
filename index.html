@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Stash — coming soon</title>
-  <meta name="description" content="Stash keeps your notes, tasks, events and ideas in one place. Our new home is on its way.">
-  <meta name="theme-color" content="#07070b">
+  <title>Stash: the everyday second brain</title>
+  <meta name="description" content="Notes, tasks, events, contacts and trackers in one app, with AI that helps when you want it. Stash is the everyday second brain.">
+  <meta name="theme-color" content="#FFFCF8">
 
   <!-- Signed in? Skip the website and go straight to the app.
        Runs first, before anything draws. Keep in step with 404.html.
@@ -31,54 +31,1545 @@
   </script>
 
   <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/site.css?v=3">
-  <script src="/site.js?v=2" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;700;800&family=Red+Hat+Text:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400..600,0..1,0&display=swap">
+<style>
+  @font-face { font-family: "StashIcons"; src: url(data:font/ttf;base64,AAEAAAAKAIAAAwAgT1MvMi3bQBYAAAEoAAAAYGNtYXAADOlVAAABlAAAADRnbHlmEf2b9gAAAdQAABEqaGVhZDD01c4AAACsAAAANmhoZWEHKwSQAAAA5AAAACRobXR4A+gAAAAAAYgAAAAKbG9jYQ9QB+QAAAHIAAAACm1heHAARAVsAAABCAAAACBuYW1leBWmuQAAEwAAAAFKcG9zdLo+SSoAABRMAAAAPAABAAAAAQAAKe0tsV8PPPUAAQPoAAAAAOb8SIMAAAAA5vxIgwBTAFMDlQOVAAAAAwACAAAAAAAAAAEAAAPoAAAAAAPoAAAApgNCAAEAAAAAAAAAAAAAAAAAAAABAAEAAAAEBWoAPwAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAwPoAZAABQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAPz8/PwAA6QDpAgPoAAAAAAPoAAAAAAAAAAAAAAAAAAAAAAAgAAAD6AAAAAAAAAAAAAAAAAACAAAAAwAAABQAAwABAAAAFAAEACAAAAAEAAQAAQAA6QL//wAA6QD//xcBAAEAAAAAAAAAAAa7B+QIlQAAAD8AgQBYA2cDkAAVACsAQQBXAG0AgwCZAK8AxQDbAPEBBwEdATMBSQFfAXUBiwGhAbcBzQHjAfkCDwIlAjsCUQJnAn0CkwKpAr8C1QLrAwEDFwMtA0MDWQNvA4UDmwOxA8cD3QPzBAkEHwQ1BEsEYQR3BI0EowS5BM8E5QT7BREFJwU9BVMFaQAAAR8FDwQvBT8DHwUPBC8FPwQfBQ8ELwU/BB8EFQ8DIy8EPwQfBQ8ELwU/BB8EDwQvBT8EHwUPBC8FPwQfBBUPAy8FPwQzHwQPBC8FPwQfBBUPAyMvBD8EHwcPBC8FPwQfBQ8ELwU/BB8EDwQvBT8EHwQPBC8ENT8EHwQVDwMjLwM1NT8DMx8DDwUvBD8FHwQPBC8EPwUfBA8EIy8DNT8EMx8DFQ8ELwQ/BR8EDwQvBD8FHwQPBC8EPwQzMx8DDwQjLwQ/BDMfBA8DJxUPBC8ENT8EHwQPBS8DNT8FHwMPBS8EPwUfBA8FLwQ/BDMfBA8ELwQ/BR8EDwUvBD8FHwQPBC8EPwUfBA8FLwQ/BR8EDwQvBDU/BB8EDwUvBD8FHwQPBC8EPwUzHwMPBCMvBD8EMx8EDwMnFQ8ELwQ1PwQfAwchLwQ/BCEfBA8DJTU/BB8EFQ8ELwM3LwM1PwMfBQ8EIy8EPwQfBQ8ELwQ1PwQfBQ8ELwQ1PwMfBRUPAy8FPwQfBQ8ELwQ1PwMzHwQVDwQvBD8EMx8EFQ8DIy8EPwQfBQ8ELwQ1PwMzHwUPAyMvBD8EHwUPBC8EPwUfBA8FLwM/BR8EDwUvBD8FHwQPBS8EPwQfBA8FLwQ/BR8DFQ8FLwM1PwQfBA8FLwQ/BR8EDwUvBD8EHwQVDwQvBD8FHwQPBS8EPwQfBA8FLwQ/AwMzHwQPBCMvBD8DFz8EHwQPBCMvBDcXFw8ELwU/BB8CEz8EHwQPBS8ENx8CDwQvBT8EHwIzHwQPBCMvBD8DAc0uDAoHBQEDBgkLDC4LCggEAQMGCQs/LAoJBgMBBAgKCwwrCwkGAwEECAoLPSkKCAQBAwYJCgwMKAoIBQEDBgkLDDklCQcCBQcKDAsLJgkGAwEECAoLDDUhCAUBAwYICwwLCiIIBAECBgkLCwwvHQcDAQQHCgsMCwkdBwMBBAcKDAsLKhgFAQIGCQoMDAoIGAUBAgYJCwsMCiMSAwQHCgsMCwkHEgQBBAcKCwwLCRsMAgIGCQoMCwsIBQwBAgUJCwsMCggTBQQHCgsMCwkHAwYBBAcJDAsLCgYCUAYCAgUICwsMCglQBQIBBQkKDAsLWgMEAQMGCQsMCwoIAgQBAwYJCwwLCg4BAgIGCAsLDAoJBQECAgYICwsMCggIAQEFCAoLDAoJBgMBBAgKCwwLCQYCBAcJCwwLCgcDBAcJCwwLCgcDAgIGCAsMCwoIBQECAgUJCwwLCggFAQcDCAoLDAsIBgMBBQMHCwsMCgkGAwIMAwkLDAsKBwMDBwMKCwsMCQcEBBAECwsMCggEAgMGCAQLDAsKCAUBAgYUBQsMCwgGAgEFCAsEDAsLCAYCAQUIFwUMCwkHAwEEBwoLBQwLCQcDAQQHChU+DAoIBgICBggKDD4MCwgFAgIFCAskAgYICgwMCggGAgIGCAoMDAoIBgEBAgcJCgwMCgcFAQIHCAsMCwoIBAEDBAgKDAsLCQYDAQQECAoLDAsJBgIGBQYJCwwLCgcFAQMFBgkLDAsKCAQBCgcICgsMCwkGAwEFBwgKCwwKCQYDAQ8ICQsMCwoIBAEDBggJCwwLCggEAQMSCgoLDAsJBgMBBQcKCgsMCwkGAwEEFgsLDAsKCAUBAwYJCwsLDAoIBAECBxgMDAwKCQcCBQcKDAwLCwkGAwEECBsNDAsKCAQBAgYJCw0MCwoIBAECBgkeDQwLCQYDAQUHCgwNDAsJBgMBBQcKHCoMCggGAQEGCAoMKgsLCAUCAgUICxABBggKDAwKCAYBAQYICgwMCggGJP7cCwsIBQICBQgLCwEkDAoIBgEBBggK/qsCBQgLCwwKCQUCAgUJCgwLCwgFERwJBwMEBwoLDAscCgYEAQQHCgsMKxoJBQIBBggKDAsLGgkFAgEGCAoMCykYBwUDBgkLCwwKGAcFAQMHCQsLDCUWBgMFBwoLDAsJFgYDBAgKCwwLIRMGAQEGCAsLDAoIFAUCAgUJCgwLCx0RBAMGCQsMCwoIEAQDBgkLDAsKGQ0DAQQHCgwLCwkHDAMFBwoMCwsJFQkCAgYICwsMCggFCgIDBQkKDAsLCA8GAwcJCwwLCgcEBQEEBgoLDAsJCAoCAQUICgsMCwkGAgIBBQgKCwwLCAYFBAMGCQsLDAoHBQEEAwYJCwsMCgcFBAsFBwoMCwsJBgMBCwUHCgwLCwkGAw4SBgkLCwwKBwUBAxIGCQsMCwoIBAEXGAgKCwwLCQYCAQQYCAoLDAsIBwIBHx4JCgwLCggFAgcdCQoMDAoHBQIoIgoLDAsIBwIBBAgiCgsMCgkHAgEELiYLDAsKCAUBAwYJJgsMCwoIBAECBjUpDAwKCQcCBQcKKgwLCwkGAwEECDktDAsKCAQBAgYJCy0MCwoIBAECBgk+LwwLCQYDAQUHCgwvDAsIBwIBBAgKaT4MCgkFAgIFCQoMPgwKCQUCAgUJCig2BgkLDAsKCAQBAzYHCQsLDAoHBAF/SwICBggLDAsKCAZLAQIGCAsLDAoICToFCAsLDAoJBQICOgUICwsMCgkFAn8qBAICBgkLCwwKCCoEAgIGCQsLDAoSVAsLCAUCAgUICwtUCwsIBQICBQgLA5ADAwYJCwwLCggEAQQCBgkLDAsKCAQDCgUICgsMCwgHAgEKBAgKCwwLCQYDDREGCQsLDAoHBQEDEAYJCwwLCggEARUXBwoMCwsJBgMFFggKCwwLCQYDAR4cCAsMCwoIBQEDBhsJCwsMCggEAQIlIQkMCwsKBgMBBAcgCgwLCwkHAwEELCQLDAsKCAUBAgYIJQoMCwsIBAIDBTIoCwwLCQcDAQQHCicMCwsKBgMEBzcrDAsKCAUCAgYICysMCwoIBQICBgk7LQwLCQcDBAgJDC0MCwkGBAEEBwknawoMCwsIBgICBQhrCgwLCwgGAgIFdgUKDAwJCAQBAwYJBQoMDAkIBAEDBhYEDAsLCAUCAgYICwQMDAoIBQICBggXBQwKCQYDAQUHCgwEDAsJBgIBBAgKGAULCQcEAwcKCwwECwoHAwMHCQsYBAsIBAIDBggLDAsECggFAQIGCAsMFgQJBgIBBQcKDAwKBAkGAgEFBwsLDBQDBwQDBwoLDAsJBAYEAwcKCwwLEgIFAQMFCQsMCwoIAgUBAgYJCgwMCg4BAwIFCAoMCwsJBQICAgQJCgsMCwgJAQEEBwoLDAsJBgQECAoLDAsJBgQCBQgLCwwKCQUCAgUJCgwLCwgFI30LCwgFAgIFCAsLfQwKCQUCAgUJCowNDAoHBQEDBgkLDA0MCgcFAQMGCQsfDQsJBgIBBAgKCwwNCwkGAgEECAoLHwwJCAQBAwYJCwsMDAoHBQIHCQoMHQsIBwIBBAgKDAsLCwkGAwEFCAoLDBoKCAQBAwYJCwwLCgoHBQEDBgkLDAsYCAYDAQQICgsMCwkIBgMBBAgKCwwLFQcEAQMGCQoMCwoIBwUBAwYJCwwLChEFAwEECAoLDAsJBgUDAQUHCgsMCwkNAwECBgkLDAsKCAQEAQMGCQsLDAoICAEBBAgKCwwLCAcCAQUHCgwMCgkHBAIGCAoMDAoIBgICBggKDAwKCAYkfQwKCAYBAQYICgx9DAoIBgICBggKrgEGCAoMDAoIBgEBBggKDAwKCAYkwwwKCAYCAgYICgzDDAoIBgEBBggKrhAHCQwLDAkGBAEEDwcKCwwLCQcDFhIJCgsMCwgGAgIFEwgKDAsLCAYCAhoVCQsMCwoIBAEDBhYJCwsMCgcEAQMeGAoLDAsJBwMBBAcYCgsMCwkHAwEEIhsKDAsLCAUCAgUIGwoMCwsIBQICBSYcCwwLCgcFAwYKHAsMCwoHBAEDBykeDAsLCQYDBQcKHgwLCwkHAgUHLCAMCwsIBQECBQkKIAwLCwgFAQIFCS4hDAsKBwQDBwkLIgsMCQcEAwcJMSIMCwgGAwEFCAoLIwwKCQYCAQQICjMwCwoIBAEDBgkLCzALCggEAQMGCQtBLQoJBgMBBQcKDAstCwkGAwEFBwsLPioKCAQBAwYJCwwLKgoIBAEDBgkLDDomCQYDAQQICgwLCyYJBgMBBQcKDAs2IggEAQMGCQsLDAoiBwUBAwYJCwwLMB0GAwEECAoLDAsJHQYDAQUHCgwLCyoXBQEDBgkLCwwKBxgFAQMGCQsMCwoiEgMBBQcKDAsLCQYSAwEECAoLDAsJGgsBAwYJCwwLCggECwECBgkLDAsKCBEDAQQICgsMCwgHAgQBBAgKCwwLCQb+pAIFCAsLDAoJBQICBQkKDAsLCAUUfQoHBAEDBgkLDAt9CgcFAgcJCwuF+gwMCggFAgIGCAv6DAsLCAUBAgUJ/vy7CwgGAgIFCAsLDLsLCAYCAgUICwvRPgsMCwoIBQIDBQk/CgwLCwgEAgIGNwIFCAsLDAoJBQICBQkKDAsLCAUABQBTAFMDlQOVAA8AHwCPAMMA9gAAARQHBiMiJyY1NDc2MzIXFicmIyIHBhUUFxYzMjc2NTQlJicmNzY/BzMzHyU3NhcWFRYHBgcHLyUjIw8GBgUPES8CJicmNzY3Nh8DPxIlFgcGBwYvByMPDCc/DDMfBhYDlXp6ra16enp6ra16eq9kjo5kZGRkjo5kZP1bDwkJAwINDQ4PDxAQEBARERAREREQERAQEBAPDw8ODQ4NDQ4NDg0ODg0ODg0ODQ0NDQ0NDAwOEAsMAQsKEBEUExITERIREBAQEA8PDw8ODg4ODg0NDQwNDA0NDA0NDQ0NDAwMDAsMCgsKCQkJCg0BewsQEBEQEhESEhMTExMUFBQVFBUVEw8JCAMDDQ0PEA8ODw8PDxAPEA8QEA8QDw8PDw4OAQGCAQoLDxALBgQEBgUHBggICQkKCwoMCwwMDA0IMwgPDg8PDw8PDw4PDg8ODg0NDQwLCQsB9K16enp6ra16enp6RWRkZI6OZGRkZI6OCwINDQ8PCQkIBwYEAwMBAwQEBgcICQoKDA0ODw8PDxAPDw8PDg4NDQwLCwkJBwcFBAMCAQEBCwoQEAsLAQEBAwUGBwkJCwsMDQ4ODg8PDxAPEA8QDg4MCwsKCAgHBgYEBAICAQICAgQEBgYJ2AwREA8PDg4MDAsKCQgGBgQCAQECBAQNDQ8PCAkDBAEBAQEDBAYGBwgJCwsLDQ0ODw8QAY0QCwwBAQsEAwMCAgEBAQICAwQFBgcICQoMCDcIDQ0LCgkIBwYEBAIBAQIEBQcIBwsACABoAGgDgAOAAA0AHwAtAD8ATQBfAG0AfwAAARUjIicmNTQ3NjMyFxYBJjU0NzYzMzIXFhUUBwYjIyIhIzU0NzYzMhcWFRQHBgE2MzIXFhUVFAcGIyInJjU1NBE1MzIXFhUUBwYjIicmARYVFAcGIyMiJyY1NDc2MzMyITMVFAcGIyInJjU0NzYBBiMiJyY1NTQ3NjMyFxYVFRQB2lAgGBcXGCAhFxj+pRcXGCDTIRcYGBch0yACmlAYFyEgGBcXGP7VFyEgGBcXGCAhFxhQIBgXFxggIRcYAVsXFxgg0yEXGBgXIdMg/WZPFxchIBgXFxgBKxchIBgXFxggIRcYAzFPFxchIBgXFxj+1RchIBgXFxggIRcYUCAYFxcYICEXGAFbFxcYINMhFxgYFyHTIP1mUBgXISAYFxcYASsXISAYFxcYICEXGFAgGBcXGCAhFxj+pRcXGCDTIRcYGBch0yAAAAAAAAwAlgABAAAAAAABAAoAAAABAAAAAAACAAcACgABAAAAAAADAA4AEQABAAAAAAAEAAoAAAABAAAAAAAFAAsAHwABAAAAAAAGABIAKgADAAEECQABABQAPAADAAEECQACAA4AUAADAAEECQADABwAXgADAAEECQAEABQAPAADAAEECQAFABYAegADAAEECQAGACQAkFN0YXNoSWNvbnNSZWd1bGFyU3Rhc2hJY29ucyAxLjBWZXJzaW9uIDEuMFN0YXNoSWNvbnMtUmVndWxhcgBTAHQAYQBzAGgASQBjAG8AbgBzAFIAZQBnAHUAbABhAHIAUwB0AGEAcwBoAEkAYwBvAG4AcwAgADEALgAwAFYAZQByAHMAaQBvAG4AIAAxAC4AMABTAHQAYQBzAGgASQBjAG8AbgBzAC0AUgBlAGcAdQBsAGEAcgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAQIBAwEEBnJlY2VudARzaXJpBXNsYWNr) format("truetype"); }
+  .si { font-family: "StashIcons"; font-style: normal; font-weight: 400; line-height: 1; display: inline-block; }
+  .ms { font-family: "Material Symbols Outlined"; font-weight: 500; font-style: normal; font-size: 22px; line-height: 1; display: inline-block; letter-spacing: normal; text-transform: none; white-space: nowrap; direction: ltr; -webkit-font-smoothing: antialiased; font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24; }
+  /* Layout: one long light page in 8 chapters, each a full-width band with a 1100px inner column. Orange = act/add, blue = AI/ask, logo gradient only on the hero wordmark. Deliberately single-theme (light). */
+  :root {
+    color-scheme: light;
+    --bg: #FFFCF8; --bg-2: #FFF4EA; --bg-3: #F3F6FD; --ink: #1C1A17; --ink-2: #5E5952; --ink-3: #8C867D; --line: #ECE5DB; --card: #FFFFFF;
+    --orange: #F2702A; --orange-ink: #B84E12; --orange-soft: #FFE9DC; --blue: #2F6FED; --blue-ink: #1F4FB3; --blue-soft: #E3ECFF;
+    --dark: #0E0F12;
+    --grad: linear-gradient(110deg, #3DB7FF, #7B3DFF 35%, #FF2F92 65%, #FFB03B);
+    --display: "Red Hat Display", system-ui, sans-serif; --body: "Red Hat Text", system-ui, sans-serif;
+    --col: 1100px; --gx: max(32px, env(safe-area-inset-left, 0px)); --gxr: max(32px, env(safe-area-inset-right, 0px));
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.55; overflow-x: hidden; }
+  body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--bg); }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.08; letter-spacing: -0.01em; }
+  h1 { font-weight: 800; font-size: clamp(2.3rem, 6vw, 4.4rem); }
+  h2 { font-weight: 800; font-size: clamp(1.9rem, 4.4vw, 3.2rem); }
+  h3 { font-weight: 700; font-size: 1.2rem; }
+  p { margin: 0; }
+  .lede { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--ink-2); max-width: 36em; }
+  .eyebrow { font-family: var(--display); font-weight: 700; font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--orange-ink); }
+  .eyebrow.blue { color: var(--blue-ink); }
+  .stash-mark { font-family: var(--display); font-weight: 800; letter-spacing: 0.02em; line-height: 1; }
+  .ms-mark { font-family: var(--display); font-weight: 700; letter-spacing: 0.01em; line-height: 1; }
+  .ms-mark .share { font-weight: 400; }
+  .grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+  /* bands */
+  .band { padding-block: clamp(40px, 5.5vw, 72px); padding-left: var(--gx); padding-right: var(--gxr); position: relative; overflow: clip; }
+  .band.warm { background: var(--bg-2); }
+  .band.cool { background: var(--bg-3); }
+  .band.dark { background: var(--dark); color: #F2EFEA; }
+  .band.dark .lede { color: #B9B4AC; }
+  .in { max-width: var(--col); margin: 0 auto; }
+  .head { display: grid; gap: 14px; max-width: 46em; margin-bottom: clamp(24px, 3.5vw, 44px); }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 72px); align-items: center; }
+  @media (max-width: 820px) { .split { grid-template-columns: 1fr; } }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  @media (max-width: 820px) { .grid3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .grid3, .grid2 { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; min-width: 0; display: grid; gap: 8px; align-content: start; }
+  .card p { color: var(--ink-2); font-size: 0.97rem; }
+  /* Meet Stash cards */
+  .ic .ms { font-size: 24px; }
+  .card .fmt { justify-content: flex-start; margin-top: 2px; }
+  .plats { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 4px; }
+  .plats span { display: grid; justify-items: center; gap: 4px; font-size: 0.72rem; font-weight: 700; font-family: var(--display); color: var(--ink-2); }
+  .plats img { width: 34px; height: 34px; object-fit: contain; display: block; }
+  .card .fmt > span:not(.nowall) { background: var(--bg-2); }
+  .fmt { align-items: center; }
+  .fmt .nowall { margin: 0 0 0 4px; }
+  .nowall { display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; font-family: var(--display); font-weight: 700; font-size: 0.86rem; color: var(--ink-3); }
+  .nowall s { text-decoration-color: #D9443A; text-decoration-thickness: 2px; }
+  .nowall .x { position: relative; display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 8px; background: var(--bg-2); color: var(--ink-2); }
+  .nowall .x::after { content: ""; position: absolute; left: 3px; right: 3px; top: 50%; height: 2.5px; border-radius: 2px; background: #D9443A; transform: rotate(-40deg); }
+  .ic { width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 1.05rem; }
+  .ic.o { background: var(--orange-soft); color: var(--orange-ink); }
+  .ic.b { background: var(--blue-soft); color: var(--blue-ink); }
+
+  /* buttons */
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; padding: 12px 22px; font-family: var(--display); font-weight: 700; font-size: 1rem; text-decoration: none; border: 1px solid transparent; cursor: pointer; }
+  .btn.p { background: var(--orange); color: #fff; }
+  .btn.p:hover { background: var(--orange-ink); }
+  .btn.g { border-color: var(--line); background: var(--card); color: var(--ink); }
+  .btn.sm { padding: 9px 16px; font-size: 0.92rem; }
+  .btn:focus-visible, a:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+  /* nav */
+  :root { --nav-a: 0.55; --ink-bg: #151B2E; --glow: 1; }
+  .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: rgba(255,255,255,var(--nav-a)); backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); padding-left: var(--gx); padding-right: var(--gxr); transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease; }
+  .nav .in { position: relative; z-index: 1; }
+  .nav.over-dark::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: var(--glow); transition: opacity 0.25s linear;
+    background:
+      radial-gradient(ellipse 22% 180% at 24% 60%, rgba(242,112,42,0.42), transparent 70%),
+      radial-gradient(ellipse 16% 160% at 46% 30%, rgba(255,61,139,0.22), transparent 70%),
+      radial-gradient(ellipse 20% 180% at 70% 70%, rgba(47,111,237,0.26), transparent 70%),
+      radial-gradient(ellipse 14% 140% at 88% 40%, rgba(255,207,74,0.18), transparent 70%);
+    filter: blur(14px); }
+  .nav.over-dark { background: rgba(21,27,46,var(--nav-a)); border-color: rgba(255,255,255,0.1); --ink: #F2EFEA; --ink-2: #D9D4CC; --ink-3: #9A97A3; --bg-2: rgba(255,255,255,0.1); --line: rgba(255,255,255,0.14); --card: #1E2436; color: #F2EFEA; }
+  .nav.over-dark .brand .t2 .ms-mark { color: #D9D4CC; }
+  .nav.over-dark .swap { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.14); }
+  .nav.over-dark .swap button { color: #D9D4CC; }
+  .nav.over-dark .swap button[aria-pressed="true"] { background: #fff; color: #1C1A17; }
+  .nav.over-dark .btn.g { background: rgba(255,255,255,0.08); color: #fff; border-color: rgba(255,255,255,0.2); }
+  .nav.over-dark .menu { background: #1E2436; border-color: #2C3448; }
+  body::before { background: var(--ink-bg); }
+  .nav .in { display: flex; align-items: center; gap: 22px; height: 66px; }
+  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .brand img { width: 38px; height: 38px; }
+  .brand .t1 { font-size: 1.35rem; }
+  .brand .t2 { font-size: 0.66rem; color: var(--ink-3); letter-spacing: 0.04em; margin-top: 2px; }
+  .brand .t2 .ms-mark { font-size: 0.72rem; color: var(--ink-2); }
+  .links { display: flex; gap: 6px; margin-left: auto; align-items: center; }
+  .links > a, .links summary { padding: 8px 12px; border-radius: 999px; text-decoration: none; font-weight: 500; font-size: 0.95rem; color: var(--ink-2); list-style: none; cursor: pointer; }
+  .links > a:hover, .links summary:hover { background: var(--bg-2); color: var(--ink); }
+  .links summary::-webkit-details-marker { display: none; }
+  .links details { position: relative; }
+  .links details[open] summary { background: var(--bg-2); }
+  .menu { position: absolute; top: 44px; left: 0; width: 260px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 18px 50px rgba(30,20,10,0.12); padding: 6px; display: grid; grid-template-columns: 1fr; gap: 0; }
+  .menu a { padding: 8px 12px; border-radius: 8px; text-decoration: none; font-size: 0.92rem; border-bottom: 1px solid var(--line); border-radius: 0; }
+  .menu a:last-child { border-bottom: 0; }
+  .menu a:first-child { border-radius: 8px 8px 0 0; }
+  .menu a:last-child { border-radius: 0 0 8px 8px; }
+  .menu a:hover { background: var(--bg-2); }
+  .menu a small { display: block; color: var(--ink-3); font-size: 0.76rem; }
+  .m-cta, .burger { display: none; }
+  .burger { width: 40px; height: 40px; flex: none; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); cursor: pointer; place-items: center; padding: 0; }
+  .burger .ms { font-size: 24px; }
+  /* phones: the four links and both buttons fold into a panel under the bar; Try Free stays in the bar */
+  @media (max-width: 760px) {
+    .swap { display: none; }
+    .nav .in { gap: 10px; }
+    .brand .t2 { white-space: nowrap; }
+    .m-cta { display: inline-flex; margin-left: auto; white-space: nowrap; padding: 8px 14px; font-size: 0.88rem; }
+    .burger { display: grid; }
+    .links { display: none; position: absolute; top: 100%; left: calc(-1 * var(--gx)); right: calc(-1 * var(--gxr)); margin: 0; flex-direction: column; align-items: stretch; gap: 2px; padding: 10px var(--gxr) 20px var(--gx); background: var(--card); border-bottom: 1px solid var(--line); box-shadow: 0 26px 40px rgba(0,0,0,0.18); max-height: calc(100dvh - 66px - env(safe-area-inset-top, 0px)); overflow-y: auto; }
+    .nav.open .links { display: flex; }
+    .links > a:not(.btn), .links summary { display: flex; justify-content: space-between; padding: 12px 8px; border-radius: 10px; font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+    .links details .menu { position: static; width: auto; box-shadow: none; border: 0; background: transparent; padding: 0 0 8px 12px; }
+    .links .menu a { border-bottom: 0; border-radius: 8px; padding: 8px 10px; }
+    .links > .btn { margin-top: 8px; padding: 12px 16px; font-size: 1rem; }
+    .links > .btn.g { margin-top: 14px; }
+  }
+  @media (max-width: 359px) { .brand .t2 { display: none; } }
+
+  /* chapter 1 */
+  .hero { padding-top: clamp(20px, 3vw, 36px); }
+  .hero-top { display: grid; gap: 18px; max-width: 52em; }
+  .swap { display: inline-flex; gap: 4px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px; padding: 4px; width: max-content; }
+  .swap button { border: 0; background: transparent; font: inherit; font-family: var(--display); font-weight: 700; font-size: 0.78rem; padding: 5px 12px; border-radius: 999px; cursor: pointer; color: var(--ink-2); }
+  .swap button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 2px rgba(0,0,0,0.08); }
+  .scene { position: relative; margin-top: clamp(12px, 2vw, 24px); display: grid; grid-template-columns: 1fr minmax(240px, 380px) 1fr; align-items: center; gap: 6px; }
+  @media (max-width: 820px) { .scene { grid-template-columns: 1fr; } }
+  .figure { position: relative; aspect-ratio: 1 / 1; max-width: 100%; }
+  .figure::before { content: ""; position: absolute; inset: -6% -10% 10%; border-radius: 50%; background: radial-gradient(closest-side, rgba(255,154,92,0.22), rgba(255,154,92,0)); pointer-events: none; }
+  .figure .person { position: relative; width: 100%; height: 100%; object-fit: contain; display: block; -webkit-mask-image: linear-gradient(#000 78%, transparent 100%); mask-image: linear-gradient(#000 78%, transparent 100%); }
+  .figure .ph { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); font-size: 0.7rem; color: var(--ink-3); background: rgba(255,255,255,0.8); border: 1px dashed var(--line); padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+  .crowd-scene { display: grid; grid-template-columns: 2fr 3fr; align-items: end; gap: 0; }
+  .crowd-scene .person { width: 100%; display: block; -webkit-mask-image: linear-gradient(#000 80%, transparent 100%); mask-image: linear-gradient(#000 80%, transparent 100%); }
+  .crowd-scene svg { width: 100%; display: block; }
+  .floaters { display: grid; gap: 12px; align-self: start; margin-top: clamp(0px, 2vw, 24px); }
+  .floaters.left { justify-items: end; text-align: right; }
+  .floaters.right { justify-items: start; }
+  /* arc: top chips tuck in toward her head, lower ones swing outward */
+  .floaters.left .chip:nth-child(1) { margin-right: -28px; } .floaters.right .chip:nth-child(1) { margin-left: -28px; }
+  .floaters.left .chip:nth-child(2) { margin-right: 2px; }   .floaters.right .chip:nth-child(2) { margin-left: 2px; }
+  .floaters.left .chip:nth-child(3) { margin-right: 30px; }  .floaters.right .chip:nth-child(3) { margin-left: 30px; }
+  .floaters.left .chip:nth-child(4) { margin-right: 52px; }  .floaters.right .chip:nth-child(4) { margin-left: 52px; }
+  .floaters.left .chip:nth-child(5) { margin-right: 64px; }  .floaters.right .chip:nth-child(5) { margin-left: 64px; }
+  .floaters.left .chip:nth-child(6) { margin-right: 66px; }  .floaters.right .chip:nth-child(6) { margin-left: 66px; }
+  .floaters.left .chip:nth-child(7) { margin-right: 60px; }  .floaters.right .chip:nth-child(7) { margin-left: 60px; }
+  /* phones: 3 questions above her, 3 things-to-remember below; the types (Tasks, Notes...) move under the AI pills (.types-m) */
+  @media (max-width: 820px) {
+    .scene { gap: 10px; }
+    .scene .floaters.left { display: none; }
+    .scene .floaters.right { display: contents; }
+    .scene .figure { order: 2; width: min(340px, 88%); justify-self: center; margin: -4px 0 -54px; }
+    .scene .chip { position: relative; z-index: 1; margin: 0 !important; max-width: 100%; }
+    .scene .chip:nth-child(-n+3) { order: 1; }
+    .scene .chip:nth-child(n+4) { order: 3; }
+    .scene .chip:nth-child(1) { justify-self: start; }
+    .scene .chip:nth-child(2) { justify-self: end; }
+    .scene .chip:nth-child(3) { justify-self: center; }
+    .scene .chip:nth-child(4) { justify-self: end; }
+    .scene .chip:nth-child(5) { display: none; }
+    .scene .chip:nth-child(6) { justify-self: start; }
+    .scene .chip:nth-child(7) { justify-self: center; }
+  }
+  .types-m, .rec-m { display: none; }
+  @media (max-width: 820px) {
+    .types-m, .rec-m { display: grid; gap: 10px; justify-items: center; width: 100%; }
+    .rec-m { margin-top: 4px; }
+    .types-m { margin-top: 10px; padding-top: 22px; border-top: 1px solid var(--line); }
+    :is(.types-m, .rec-m) p { margin: 0; font-family: var(--display); font-weight: 700; font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-3); }
+    :is(.types-m, .rec-m) div { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    :is(.types-m, .rec-m) .chip { padding: 6px 12px; font-size: 0.86rem; box-shadow: none; }
+    :is(.types-m, .rec-m) .chip i { width: 8px; height: 8px; }
+    :is(.types-m, .rec-m) .chip .ms { font-size: 18px; }
+  }
+  .chip { display: inline-flex; align-items: center; gap: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 8px 14px; font-family: var(--display); font-weight: 700; font-size: 0.95rem; box-shadow: 0 6px 20px rgba(60,40,20,0.06); will-change: transform; }
+  .chip i { width: 10px; height: 10px; border-radius: 50%; background: var(--orange); display: inline-block; }
+  .chip .ms { color: var(--orange); font-size: 20px; }
+  .chip.q { font-family: var(--body); font-weight: 500; color: var(--ink-2); font-style: italic; }
+  .chip.q i { background: var(--blue); }
+  .hero-sub { margin-top: clamp(20px, 3.5vw, 40px); display: grid; gap: 16px; justify-items: center; text-align: center; }
+  .ai-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 10px; }
+  .ai-row span { background: var(--blue-soft); color: var(--blue-ink); border-radius: 999px; padding: 6px 12px; font-size: 0.86rem; font-weight: 500; }
+  .band.brain { background: #FFFFFF; }
+  .asset .lead { color: var(--ink); font-family: var(--display); }
+  .asset .ul { text-decoration-color: var(--orange); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  .asset .subhead { margin-top: 14px; font-size: clamp(1.15rem, 2vw, 1.5rem); line-height: 1.25; }
+  .five .fn { display: block; margin-top: 8px; font-size: 0.8rem; opacity: 0.75; }
+  .band.brain .orbit .ring { border: 2px dashed rgba(242,112,42,0.55); }
+  .asset { margin-top: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  @media (max-width: 820px) { .asset { grid-template-columns: 1fr; } }
+  .orbit { position: relative; aspect-ratio: 1; max-width: 420px; margin: 0 auto; width: 100%; }
+  .orbit .core { position: absolute; left: 50%; top: 50%; width: 32%; transform: translate(-50%,-50%); border-radius: 24%; box-shadow: 0 20px 50px rgba(120,60,200,0.25); }
+  .orbit .ring { position: absolute; inset: 8%; border: 1.5px dashed var(--line); border-radius: 50%; }
+  .orbit .sat { position: absolute; width: 64px; height: 64px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 0.72rem; box-shadow: 0 10px 24px rgba(60,40,20,0.1); transform: translate(-50%,-50%); }
+  .logo-ph { font-size: 0.68rem; color: var(--ink-2); }
+
+  /* chapter 2 */
+  .phone { width: min(300px, 80vw); margin: 0 auto; background: #111; border-radius: 44px; padding: 12px; box-shadow: 0 30px 80px rgba(20,10,0,0.25), inset 0 0 0 2px #2a2a2a; }
+  .phone img { border-radius: 34px; }
+  /* two phones, hinged near the bottom-left corner: Notes upright in front, Tasks fanned out behind */
+  .phone-fan { width: min(530px, 100%); margin: 0 auto; padding: 9% 1.5% 3% 0; }
+  .fan-pair { position: relative; width: 51%; margin-left: auto; container-type: inline-size; }
+  .fan-pair .phone { width: 100%; margin: 0; padding: 4.2cqw; border-radius: 15cqw; }
+  .fan-pair .phone img { display: block; width: 100%; border-radius: 11cqw; }
+  .phone-fan .fan-pair .phone.front { position: relative; box-shadow: -14px 18px 40px rgba(0,0,0,0.35), 0 30px 80px rgba(20,10,0,0.22), inset 0 0 0 2px #333; }
+  .phone-fan .fan-pair .phone.back { position: absolute; left: 0; top: 0; transform-origin: 15% 92%; transform: rotate(-30deg); box-shadow: 0 24px 60px rgba(20,10,0,0.2), inset 0 0 0 2px #2a2a2a; }
+  .js .phone-fan .fan-pair .phone.back { transform: rotate(0deg); transition: transform 1.1s cubic-bezier(0.2, 0.8, 0.2, 1) 0.45s; }
+  .js .phone-fan.on .fan-pair .phone.back { transform: rotate(-30deg); }
+  @media (prefers-reduced-motion: reduce) { .js .phone-fan .fan-pair .phone.back { transform: rotate(-30deg); transition: none; } }
+  .viewbar { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; max-width: 460px; margin: 28px auto 0; }
+  @media (max-width: 480px) { .viewbar { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 14px; } }
+  .viewbar > span { display: grid; justify-items: center; gap: 4px; font-size: 0.74rem; color: var(--ink-2); font-weight: 500; min-width: 0; }
+  .viewbar b .si { font-size: 22px; }
+  .viewbar b .ms { font-size: 28px; width: 1em; height: 1em; overflow: hidden; color: var(--orange); }
+  .viewbar b { width: 50px; height: 50px; border-radius: 12px; background: var(--card); border: 1px solid var(--line); display: grid; place-items: center; font-family: var(--display); font-weight: 800; color: var(--orange-ink); }
+  .plan { margin-top: 36px; text-align: center; color: var(--ink-2); }
+
+  /* chapter 3 */
+  .platforms { display: flex; flex-wrap: wrap; gap: 10px; }
+  .platforms span { border: 1px solid var(--line); background: var(--card); border-radius: 999px; padding: 7px 14px; font-weight: 500; font-size: 0.92rem; }
+  .drop { border: 2px dashed var(--orange); background: var(--orange-soft); border-radius: 18px; padding: 34px 20px; text-align: center; display: grid; gap: 8px; }
+  .drop b { font-family: var(--display); font-size: 1.15rem; }
+  .card.drop { align-content: center; justify-items: center; padding: 26px 20px; }
+  .drop .up { font-size: 46px; color: var(--orange); font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 48; animation: bob 2.4s ease-in-out infinite; }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+  @media (prefers-reduced-motion: reduce) { .drop .up { animation: none; } }
+  .take { margin-top: 28px; display: grid; gap: 10px; justify-items: center; text-align: center; }
+  .take p { color: var(--ink-2); font-size: 0.92rem; margin: 0; }
+  .fmt { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+  .fmt > span:not(.nowall) { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: 0.82rem; font-weight: 700; font-family: var(--display); }
+
+  /* chapter 4 */
+  .chat { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: 18px; display: grid; gap: 12px; box-shadow: 0 24px 60px rgba(30,40,80,0.1); }
+  .msg { max-width: 88%; padding: 12px 16px; border-radius: 18px; font-size: 0.95rem; line-height: 1.45; }
+  .msg.me { background: var(--blue); color: #fff; justify-self: end; border-bottom-right-radius: 6px; }
+  .msg.ai { background: var(--bg-3); border-bottom-left-radius: 6px; }
+  .msg.sys { justify-self: center; font-size: 0.78rem; color: var(--ink-3); background: transparent; padding: 2px; display: flex; gap: 6px; align-items: center; }
+  .msg.sys i { width: 18px; height: 18px; border-radius: 5px; background: var(--grad); display: inline-block; }
+  .asks { display: grid; gap: 12px; }
+  .ask { display: flex; gap: 14px; align-items: flex-start; }
+  .ask .ic { flex: none; }
+  .ask b { font-family: var(--display); display: block; margin-bottom: 2px; }
+  .ask span { color: var(--ink-2); font-size: 0.95rem; }
+  .roi { font-family: var(--display); font-weight: 800; font-size: clamp(3rem, 9vw, 6.5rem); line-height: 1; letter-spacing: -0.02em; }
+  .roi em { font-style: normal; color: var(--orange); }
+  /* chapter 5: her, text, Mark */
+  .share3 { display: grid; grid-template-columns: minmax(220px, 1.35fr) minmax(0, 1.5fr) minmax(160px, 0.9fr); gap: clamp(16px, 3vw, 40px); align-items: end; }
+  .share3 .people { position: relative; align-self: end; aspect-ratio: auto; }
+  .share3 .people img { width: 100%; display: block; -webkit-mask-image: linear-gradient(#000 82%, transparent 100%); mask-image: linear-gradient(#000 82%, transparent 100%); }
+  .share3 .people.mark img { max-height: 520px; object-fit: contain; object-position: bottom; }
+  .share3 .people:not(.mark) { display: grid; }
+  .share3 .pbubble { position: static; width: min(260px, 100%); margin: 0 0 12px auto; border-radius: 16px 16px 4px 16px; }
+  /* teams block under the sharing row */
+  .teams { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: center; margin-top: clamp(48px, 7vw, 88px); }
+  .teams-fig { justify-self: center; width: min(460px, 100%); }
+  .teams-fig img { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; box-shadow: 0 0 0 6px #fff, 0 0 0 8px rgba(242,112,42,0.35), 0 30px 60px rgba(40,25,10,0.16); }
+  .teams-text { display: grid; gap: 16px; max-width: 34em; }
+  .teams-h { font-size: clamp(1.7rem, 3.6vw, 2.6rem); }
+  /* "Grow your brain": sources flowing into Stash */
+  .grow { margin-top: clamp(48px, 7vw, 88px); }
+  .feed { display: grid; justify-items: center; width: 100%; max-width: 500px; margin: 0 auto; }
+  .sources { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; width: 100%; }
+  .sources > span { display: grid; justify-items: center; gap: 6px; padding: 12px 4px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; font-family: var(--display); font-weight: 700; font-size: 0.74rem; color: var(--ink-2); text-align: center; box-shadow: 0 6px 16px rgba(40,25,10,0.05); }
+  .sources .ms { font-size: 24px; color: var(--orange); }
+  .sources svg { width: 24px; height: 24px; display: block; color: #1C1A17; }
+  .funnel { display: block; width: 76%; height: 64px; }
+  .funnel path { fill: none; stroke: var(--orange); stroke-width: 2.5; stroke-dasharray: 6 8; vector-effect: non-scaling-stroke; opacity: 0.7; animation: flow 1.2s linear infinite; }
+  @keyframes flow { to { stroke-dashoffset: -28; } }
+  .into { display: flex; align-items: center; gap: 14px; width: min(340px, 100%); padding: 14px 16px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 14px 34px rgba(40,25,10,0.08); }
+  .into img { width: 46px; height: 46px; border-radius: 12px; flex: none; }
+  .into > div { flex: 1; min-width: 0; display: grid; gap: 6px; }
+  .into b { font-family: var(--display); }
+  .into small { font-size: 0.76rem; color: var(--ink-3); }
+  .meter { display: block; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+  .meter i { display: block; height: 100%; width: 88%; border-radius: 4px; background: linear-gradient(90deg, var(--orange), #FFB36B); transition: width 1.8s cubic-bezier(.2,.8,.2,1) 0.4s; }
+  .js .feed .meter i { width: 10%; }
+  .js .feed.on .meter i { width: 88%; }
+  @media (prefers-reduced-motion: reduce) { .funnel path { animation: none; } }
+  @media (max-width: 520px) { .sources { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .connect { display: flex; align-items: center; gap: 16px; margin-top: 4px; padding: 14px 18px; border-radius: 16px; background: var(--bg-2); border: 1px solid var(--line); }
+  .connect-logos { display: flex; gap: 8px; flex: none; }
+  .connect-logos span { width: 42px; height: 42px; border-radius: 12px; background: #fff; display: grid; place-items: center; box-shadow: 0 2px 8px rgba(40,25,10,0.08); }
+  .connect-logos svg, .connect-logos img { width: 24px; height: 24px; display: block; }
+  .connect-logos img { border-radius: 6px; }
+  .connect p { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+  .connect p b { display: block; color: var(--ink); font-family: var(--display); }
+  @media (max-width: 520px) { .connect { flex-direction: column; align-items: flex-start; } }
+  @media (max-width: 820px) { .teams { grid-template-columns: 1fr; } .teams-fig { width: min(340px, 86%); } }
+  .share-text { padding-bottom: clamp(12px, 2vw, 28px); }
+  .ptag { position: absolute; left: 12%; top: 8%; background: var(--orange); color: #fff; font-family: var(--display); font-weight: 800; font-size: 0.8rem; padding: 4px 12px; border-radius: 999px; }
+  @media (max-width: 820px) {
+    .share3 { grid-template-columns: 1fr 1fr; }
+    .share-text { grid-column: 1 / -1; order: -1; }
+  }
+  /* chapter 4, part 1: black card with her, three mini chats */
+  .voice { align-items: center; }
+  .voice-card { background: #0B0D12; color: #F2EFEA; border-radius: 26px; padding: 26px 26px 0; display: grid; gap: 10px; overflow: hidden; box-shadow: 0 30px 70px rgba(10,20,60,0.35); max-width: 480px; }
+  .voice-card h3 { font-family: var(--display); font-weight: 800; font-size: 1.3rem; line-height: 1.25; margin: 0; text-wrap: balance; }
+  .voice-card img { width: 100%; display: block; margin-top: 6px; }
+  .voice-card .ask-bubble { justify-self: end; width: min(270px, 82%); margin-top: 4px; background: var(--orange); color: #fff; border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 0.86rem; line-height: 1.4; box-shadow: 0 14px 30px rgba(242,112,42,0.3); transform-origin: bottom left; }
+  .voice-card .ask-bubble b { display: block; font-family: var(--display); margin-bottom: 3px; }
+  .voice-card .ask-bubble .a { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.35); font-size: 0.8rem; opacity: 0.95; }
+  .voice-card .ask-bubble b .si { font-size: 21px; margin-right: 7px; vertical-align: -4px; }
+  .voice-card .ask-bubble { transition: opacity 0.45s ease, transform 0.55s cubic-bezier(.2,1.3,.4,1); }
+  .voice-card .ask-bubble .a { transition: opacity 0.5s ease; }
+  /* hidden until the Trip to Italy card arrives beside her (only when the card animation runs) */
+  .ask-ready .voice-card .ask-bubble { opacity: 0; transform: scale(0.7) translateY(14px); }
+  .ask-ready.ask-1 .voice-card .ask-bubble { opacity: 1; transform: none; }
+  .ask-ready .voice-card .ask-bubble .a { opacity: 0; }
+  .ask-ready.ask-5 .voice-card .ask-bubble .a { opacity: 0.95; }
+  .ask-ready.ask-5 .voice-card .ask-bubble { animation: answered 0.6s ease 1; }
+  @keyframes answered { 50% { box-shadow: 0 14px 30px rgba(242,112,42,0.3), 0 0 0 6px rgba(242,112,42,0.25); } }
+  /* the line between the bubble and the card */
+  .wire { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 39; overflow: visible; opacity: 0; transition: opacity 0.3s ease; }
+  .ask-2 .wire.show { opacity: 1; }
+  .ask-6 .wire.show { opacity: 0; transition-duration: 0.8s; }
+  .wire .w-out { fill: none; stroke: var(--orange); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; transition: stroke-dashoffset 0.7s ease; filter: drop-shadow(0 0 4px rgba(242,112,42,0.55)); }
+  .ask-2 .wire .w-out { stroke-dashoffset: 0; }
+  .wire .w-back { fill: none; stroke: #FFC48F; stroke-width: 5; stroke-linecap: round; stroke-dasharray: 0.14 1.3; stroke-dashoffset: 0.14; opacity: 0; filter: drop-shadow(0 0 6px rgba(255,160,80,0.9)); }
+  .ask-4 .wire .w-back { opacity: 1; animation: wireBack 0.75s ease-in forwards; }
+  @keyframes wireBack { from { stroke-dashoffset: 0.14; } to { stroke-dashoffset: -1.05; } }
+  /* the card lights up where the answer is */
+  .leaf mark.hit { background: transparent; color: inherit; border-radius: 4px; padding: 0 2px; margin: 0 -2px; transition: background 0.4s ease, box-shadow 0.4s ease; }
+  .ask-3 .leaf[data-stage="4"] mark.hit { background: #FFE2CC; box-shadow: 0 0 0 2px rgba(242,112,42,0.35); }
+  .ask-6 .leaf mark.hit { background: transparent; box-shadow: none; }
+  .ask-3 .leaf[data-stage="4"] .paper { box-shadow: 0 24px 60px rgba(40,25,10,0.22), 0 0 0 3px rgba(242,112,42,0.45); }
+  .ask-6 .leaf .paper { box-shadow: 0 24px 60px rgba(40,25,10,0.22), 0 2px 6px rgba(0,0,0,0.08); }
+  .minis { display: grid; gap: 14px; align-content: center; max-width: 470px; }
+  .mini { display: grid; gap: 8px; }
+  .mini .msg { font-size: 0.9rem; padding: 10px 14px; max-width: 92%; }
+  .mini .msg.me { font-family: var(--display); font-weight: 700; }
+  /* chapter 4, part 2: Claude-style window with connected peers */
+  .subhead { margin: -6px 0 0; font-family: var(--display); font-weight: 700; font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.15; color: var(--ink-2); }
+  .deep { margin-top: clamp(32px, 4.5vw, 56px); }
+  .mcp { display: grid; grid-template-columns: 1fr minmax(280px, 560px) 1fr; align-items: center; gap: 0; }
+  .peers { display: grid; gap: 40px; justify-items: end; padding-right: 44px; }
+  .peers:last-child { justify-items: start; padding-right: 0; padding-left: 44px; }
+  .peer { position: relative; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: #1C1A17; border-radius: 999px; padding: 8px 16px 8px 10px; font-family: var(--display); font-weight: 700; font-size: 0.92rem; box-shadow: 0 8px 24px rgba(0,0,0,0.18); white-space: nowrap; }
+  .peer svg { width: 22px; height: 22px; }
+  .peer::after { content: ""; position: absolute; top: 50%; width: 58px; border-top: 2.5px dashed var(--orange); }
+  .peer { z-index: 1; }
+  .peer img { width: 22px; height: 22px; border-radius: 6px; }
+  .peers:first-child .peer::after { left: 100%; }
+  .peers:last-child .peer::after { right: 100%; }
+  .claude-win { background: #F5F0E8; color: #2B2420; border-radius: 18px; padding: 0 18px 18px; display: grid; gap: 12px; box-shadow: 0 30px 70px rgba(10,20,60,0.35); font-family: var(--body); }
+  .cw-bar { display: flex; align-items: center; gap: 6px; padding: 12px 0 10px; border-bottom: 1px solid #E6DFD3; margin-bottom: 4px; font-size: 0.82rem; }
+  .cw-dot { width: 10px; height: 10px; border-radius: 50%; background: #DDD5C7; }
+  .cw-bar b { margin-left: 10px; font-family: var(--display); }
+  .cw-bar em { font-style: normal; color: #8C8479; margin-left: auto; }
+  .cw-me { justify-self: end; background: #EADFCF; border-radius: 16px 16px 4px 16px; padding: 10px 14px; max-width: 85%; font-size: 0.92rem; }
+  .cw-tool { font-size: 0.78rem; color: #8C8479; padding-left: 30px; }
+  .cw-ai { display: flex; gap: 10px; font-size: 0.92rem; line-height: 1.5; }
+  .cw-ai i { flex: none; width: 22px; height: 22px; border-radius: 6px; background: #D97757; color: #fff; font-style: normal; font-size: 13px; display: grid; place-items: center; margin-top: 2px; }
+  .cw-ai p { margin: 0; }
+  .mcp-note { color: var(--ink-2); font-family: var(--display); font-weight: 700; font-size: 0.92rem; line-height: 1.3; }
+  .peers:last-child .mcp-note { text-align: left; }
+  @media (max-width: 820px) {
+    .mcp { grid-template-columns: 1fr; gap: 16px; }
+    .peers, .peers:last-child { grid-auto-flow: column; justify-items: center; justify-content: center; gap: 10px; }
+    .peer::after { display: none; }
+    .peers, .peers:last-child { padding: 0; }
+    .mcp-note br { display: none; }
+    .voice-fig { position: relative; }
+  .voice-fig::before { content: ""; position: absolute; left: 50%; bottom: 0; width: 120%; max-width: 560px; aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(closest-side, rgba(10,30,90,0.35), rgba(10,30,90,0)); pointer-events: none; }
+  .voice-card { max-width: none; }
+  }
+
+  /* chapter 5 */
+  .people { position: relative; aspect-ratio: 16 / 9; max-width: 100%; }
+  .people svg { width: 100%; height: 100%; display: block; }
+  .ticks { display: grid; gap: 14px; }
+  .tick { display: flex; gap: 12px; align-items: flex-start; }
+  .tick i { flex: none; width: 24px; height: 24px; border-radius: 50%; background: var(--orange-soft); color: var(--orange-ink); display: grid; place-items: center; font-size: 0.8rem; font-weight: 800; margin-top: 2px; }
+  .tick b { font-family: var(--display); }
+  .tick span { display: block; color: var(--ink-2); font-size: 0.95rem; }
+
+  /* chapter 6 */
+  /* Quality: a real laptop photo with the Stash window centered on its screen, black on the sides */
+  .laptop-photo { position: relative; width: min(880px, 100%); margin: 0 auto; }
+  /* laptop + "AI Assistant" callout: laptop on the left, note on the right, a line from the Ask bar to the note */
+  .laptop-stage { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 210px; gap: 28px; align-items: start; }
+  .laptop-stage .laptop-photo { width: 100%; margin: 0; }
+  .ai-note { position: relative; z-index: 2; display: grid; gap: 8px; padding-top: clamp(40px, 12vw, 140px); min-width: 0; }
+  .ai-note .ai-t { font-family: var(--display); font-weight: 800; font-size: 1.35rem; line-height: 1.2; display: flex; align-items: center; gap: 8px; }
+  .ai-note .ai-t .ms { color: var(--orange); font-size: 24px; font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24; }
+  .ai-note ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+  .ai-note li { position: relative; padding-left: 18px; color: var(--ink-2); font-size: 0.98rem; line-height: 1.4; }
+  .ai-note li::before { content: ""; position: absolute; left: 2px; top: 0.55em; width: 7px; height: 7px; border-radius: 50%; background: var(--orange); }
+  .ai-line { position: absolute; left: 0; top: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 1; }
+  .ai-line .ln { fill: none; stroke: var(--orange); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .ai-line .dot { fill: var(--orange); stroke: #fff; stroke-width: 2; }
+  .ai-line .pulse { fill: none; stroke: var(--orange); stroke-width: 2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+  .laptop-photo .screen .ask-ring { position: absolute; border-radius: 22px; box-shadow: 0 0 0 3px var(--orange), 0 0 18px 4px rgba(242,112,42,0.45); pointer-events: none; }
+  .ai-line:not(.ready), .laptop-photo .screen .ask-ring:not(.ready) { visibility: hidden; }
+  .js .laptop-stage .ai-line .ln { stroke-dashoffset: 1; transition: stroke-dashoffset 0.9s ease 0.7s; }
+  .js .laptop-stage .ai-line .dot, .js .laptop-stage .ask-ring { opacity: 0; transition: opacity 0.4s ease 0.5s; }
+  .js .laptop-stage .ai-note { opacity: 0; transform: translateX(10px); transition: opacity 0.6s ease 1.3s, transform 0.6s ease 1.3s; }
+  .js .laptop-stage.on .ai-line .ln { stroke-dashoffset: 0; }
+  .js .laptop-stage.on .ai-line .dot, .js .laptop-stage.on .ask-ring { opacity: 1; }
+  .js .laptop-stage.on .ai-note { opacity: 1; transform: none; }
+  .js .laptop-stage.on .ai-line .pulse { animation: askPulse 2.4s ease-out 1.6s infinite; }
+  @keyframes askPulse { 0% { opacity: 0.8; transform: scale(0.6); } 70%, 100% { opacity: 0; transform: scale(2.6); } }
+  @media (max-width: 900px) {
+    .laptop-stage { grid-template-columns: 1fr; gap: 26px; }
+    .ai-note { padding-top: 0; width: min(330px, 100%); justify-self: center; }
+    .js .laptop-stage .ai-note { transform: translateY(10px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .js .laptop-stage .ai-line .ln { stroke-dashoffset: 0; transition: none; }
+    .js .laptop-stage .ai-line .dot, .js .laptop-stage .ask-ring, .js .laptop-stage .ai-note { opacity: 1; transform: none; transition: none; }
+    .js .laptop-stage.on .ai-line .pulse { animation: none; }
+  }
+  .laptop-photo .lp { width: 100%; display: block; }
+  .laptop-photo .screen.warped { left: 0; top: 0; width: 1000px; height: 553px; transform-origin: 0 0; }
+  .laptop-photo .screen { position: absolute; left: 16.872%; top: 10.827%; width: 66.344%; height: 62.406%; background: radial-gradient(120% 90% at 30% 10%, #4A505C 0%, #2A2E36 55%, #17191E 100%); overflow: hidden; }
+  .laptop-photo .screen .win { position: absolute; left: 50%; bottom: 0; height: 94%; width: auto; max-width: none; transform: translateX(-50%); border-radius: 8px 8px 0 0; box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 18px 50px rgba(0,0,0,0.25); }
+
+  /* chapter 7 */
+  .five { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; background: #22242A; border-radius: 20px; overflow: hidden; }
+  @media (max-width: 980px) { .five { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) { .five { grid-template-columns: 1fr; } }
+  .five div { background: #15171B; padding: 24px 20px; display: grid; gap: 10px; align-content: start; min-width: 0; }
+  .five h3 { color: #fff; font-size: 1.35rem; }
+  .five p { color: #B9B4AC; font-size: 0.93rem; }
+  .five small { color: var(--orange); font-family: var(--display); font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; font-size: 0.68rem; }
+  .stack { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .stack span { border: 1px solid #2E3138; border-radius: 999px; padding: 6px 14px; font-size: 0.88rem; color: #D9D4CC; }
+
+  /* ===== Tasks (black, after the laptop): simple list -> the robots -> 1-2-3 -> your helpers -> boards ===== */
+  .tk-top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+  .tk-copy { display: grid; gap: 16px; }
+  .tk-tip { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 14px; align-items: start; margin-top: 8px; padding: 16px 18px; border-radius: 16px; background: #16181C; border: 1px solid #2A2D33; }
+  .tk-tip .tk-ic { width: 42px; height: 42px; border-radius: 12px; background: #16233F; display: grid; place-items: center; }
+  .tk-tip .tk-ic .ms { font-size: 26px; color: #8FB0FF; }
+  .tk-tip p { color: #B9B4AC; }
+  .tk-tip b { color: #F2EFEA; }
+  /* phone frame sized by its wrapper; orange rings sit on the robot icons in the screenshot */
+  .tk-phw { container-type: inline-size; width: min(300px, 100%); margin-inline: auto; }
+  .tk-ph { background: #111; padding: 4cqw; border-radius: 15cqw; box-shadow: 0 30px 70px rgba(0,0,0,0.55), inset 0 0 0 2px #34363C; }
+  .tk-scr { position: relative; border-radius: 11cqw; overflow: hidden; }
+  .tk-scr img { width: 100%; }
+  .tk-bot { position: absolute; left: var(--x); top: var(--y); width: 8.5cqw; height: 8.5cqw; transform: translate(-50%, -50%); border-radius: 50%; box-shadow: 0 0 0 2px var(--orange), 0 0 14px 3px rgba(242,112,42,0.55); }
+  .tk-bot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--orange); animation: tkPulse 2.4s ease-out infinite; animation-delay: var(--d, 0s); }
+  @keyframes tkPulse { 0% { opacity: 0.85; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(2.2); } }
+  .tk-sub { margin-top: clamp(48px, 6vw, 80px); display: grid; gap: 8px; }
+  .tk-sub h3, .tk-hcopy h3, .tk-bcopy h3 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); font-weight: 800; }
+  .tk-sub p, .tk-hcopy p, .tk-bcopy p { color: #B9B4AC; max-width: 46em; }
+  .tk-steps { list-style: none; margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+  .tk-steps li { display: grid; gap: 12px; align-content: start; position: relative; min-width: 0; container-type: inline-size; }
+  .tk-steps figure { margin: 0; border-radius: 14px; overflow: hidden; background: #fff; box-shadow: 0 16px 40px rgba(0,0,0,0.45); }
+  .tk-steps figure img { aspect-ratio: 1125 / 846; width: 100%; }
+  .tk-cap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 12px; align-items: start; }
+  .tk-cap h4 { margin: 3px 0 0; font-family: var(--display); font-weight: 700; font-size: 1.08rem; line-height: 1.25; }
+  .tk-cap p { grid-column: 2; color: #B9B4AC; font-size: 0.95rem; }
+  .tk-num { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--orange); color: #fff; font-family: var(--display); font-weight: 800; font-size: 0.95rem; }
+  /* arrow between steps, centered on the screenshot (its height is 75.2% of the card width) */
+  .tk-steps li:not(:last-child)::after { content: "arrow_forward"; font-family: "Material Symbols Outlined"; font-size: 20px; position: absolute; right: -11px; top: calc(37.6cqw - 15px); transform: translateX(50%); width: 30px; height: 30px; border-radius: 50%; background: var(--orange); color: #fff; display: grid; place-items: center; z-index: 1; box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+  .tk-help { margin-top: clamp(56px, 7vw, 96px); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
+  .tk-hcopy { display: grid; gap: 14px; }
+  .tk-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tk-pills > span { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 999px; background: #16181C; border: 1px solid #2A2D33; font-size: 0.86rem; font-weight: 500; }
+  .tk-pills .ms { font-size: 18px; color: #FF9A5C; }
+  .tk-ui { margin: 0; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 44px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06); }
+  .tk-ui img { width: 100%; }
+  .tk-ui.tk-fade img { -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
+  .tk-ui.tk-dark { background: #0E0F12; box-shadow: 0 0 0 1px rgba(255,255,255,0.08); }
+  .tk-collage { display: grid; }
+  .tk-collage .tk-agent { width: 62%; }
+  .tk-collage .tk-hand { width: 76%; margin: -11% 0 0 auto; position: relative; z-index: 1; }
+  .tk-board { margin-top: clamp(48px, 6vw, 80px); display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .tk-bcopy { display: grid; gap: 10px; }
+  @media (max-width: 860px) {
+    .tk-top, .tk-help, .tk-board { grid-template-columns: minmax(0, 1fr); }
+    .tk-board .tk-ui { order: 2; }
+  }
+  @media (max-width: 700px) {
+    .tk-steps { grid-template-columns: minmax(0, 1fr); max-width: 460px; gap: 34px; }
+    .tk-steps li:not(:last-child)::after { content: "arrow_downward"; right: auto; left: 50%; top: auto; bottom: -32px; transform: translateX(-50%); }
+  }
+  @media (max-width: 560px) {
+    .tk-collage .tk-agent { width: 100%; }
+    .tk-collage .tk-hand { width: 100%; margin: 14px 0 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .tk-bot::after { animation: none; opacity: 0; } }
+
+  /* chapter 8 */
+  .more { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+  @media (max-width: 980px) { .more { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .more { grid-template-columns: 1fr; } }
+  .shot { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; min-width: 0; }
+  .shot img { aspect-ratio: 4 / 3; object-fit: cover; object-position: top; width: 100%; border-bottom: 1px solid var(--line); }
+  .shot div { padding: 14px 16px 18px; }
+  .shot h3 { font-size: 1.05rem; margin-bottom: 4px; }
+  .shot p { font-size: 0.9rem; color: var(--ink-2); }
+  .shot .shot-ph { padding: 0; aspect-ratio: 4 / 3; width: 100%; max-width: 100%; display: grid; place-content: center; justify-items: center; gap: 10px; border-bottom: 1px solid var(--line); background: repeating-linear-gradient(135deg, #FFF4EA 0 14px, #FFEEE2 14px 28px); color: var(--orange); }
+  .shot .shot-ph .ms { font-size: 46px; }
+  .shot .shot-ph .ics { display: flex; align-items: center; gap: 4px; }
+  .shot .shot-ph .ics .lk { font-size: 26px; color: var(--ink-3); }
+  .shot .shot-ph small { font-family: var(--display); font-weight: 700; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--orange-ink); }
+  .shot .shot-ph.art { background: var(--blue-soft); color: var(--blue); }
+  /* AI Audit Trail: the app's "what I did" card for the Socrates note, rebuilt in HTML so it stays sharp when zoomed in */
+  .shot .res-mock { padding: 0; aspect-ratio: 4 / 3; width: 100%; max-width: 100%; background: #fff; border-bottom: 1px solid var(--line); display: grid; place-content: center; container-type: inline-size; overflow: hidden; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .res-mock .rs-grid { display: grid; grid-template-columns: repeat(4, 16.5cqw); column-gap: 7cqw; row-gap: 4.5cqw; }
+  .res-mock .rs { display: grid; justify-items: center; gap: 1.8cqw; font-size: 4.2cqw; line-height: 1.1; color: #8A8A8A; white-space: nowrap; }
+  .res-mock .rs-b { width: 16.5cqw; height: 16.5cqw; border-radius: 3.4cqw; background: #F4F4F4; border: 1px solid #DCDCDC; display: grid; place-items: center; }
+  .res-mock .rs-b .ms { font-size: 8.6cqw; color: #7A7A7A; font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24; }
+  .res-mock .rs.on { color: #2F6FED; font-weight: 700; }
+  .res-mock .rs.on .rs-b { background: #2F6FED; border-color: #2F6FED; }
+  .res-mock .rs.on .rs-b .ms { color: #fff; font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+  .res-mock .rs.add .rs-b .ms { color: #2F6FED; }
+  .shot .audit-mock { padding: 0; aspect-ratio: 4 / 3; width: 100%; max-width: 100%; background: #050505; border-bottom: 1px solid var(--line); display: grid; align-content: center; container-type: inline-size; overflow: hidden; }
+  .am-head { margin: 0 4cqw 3.6cqw; display: flex; align-items: center; gap: 0.35em; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; font-size: 5.6cqw; font-weight: 700; color: #fff; line-height: 1.2; }
+  .am-head .ms { font-size: 1.5em; color: #8DA6FF; font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24; }
+  /* Interactive Reading: the app's reading panel, rebuilt in HTML so it stays sharp */
+  .shot .ir-mock { padding: 4.5% 6% 4%; aspect-ratio: 4 / 3; width: 100%; max-width: 100%; background: #fff; border-bottom: 1px solid var(--line); display: grid; align-content: center; container-type: inline-size; overflow: hidden; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: #141414; }
+  .ir-mock > span { display: block; font-size: 4.9cqw; line-height: 1.25; }
+  .ir-mock .ir-top { display: flex; align-items: center; justify-content: space-between; }
+  .ir-top b { font-weight: 400; font-size: 1.45em; letter-spacing: -0.01em; }
+  .ir-top .ms { font-size: 1.45em; color: #3C3C3C; margin-right: 0.3em; }
+  .ir-mock .ir-tips { margin-top: 0.6em; background: #F4F4F4; border-radius: 0.65em; padding: 0.6em 0.8em; display: grid; gap: 0.1em; }
+  .ir-mock .ir-bar { margin-top: 0.8em; height: 0.32em; background: #4A525A; }
+  .ir-mock .ir-words { margin-top: 0.25em; text-align: right; color: #4E4E4E; font-size: 5cqw; }
+  .ir-mock .ir-btns { margin-top: 0.45em; display: flex; justify-content: center; gap: 1.3em; }
+  .ir-btns .ms { width: 1.8em; height: 1.8em; border-radius: 50%; background: #F37029; color: #fff; display: grid; place-items: center; font-size: 1.45em; box-shadow: 0 0.1em 0.28em rgba(0,0,0,0.22); }
+  .shot .am-card { padding: 0.95em 0.8em 1em 0.7em; margin: 0 4cqw; font-size: 4.4cqw; line-height: 1.3; background: #1C1C1C; border-radius: 0.9em; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.6em; align-items: start; color: #fff; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  .shot .am-body { padding: 0; display: grid; gap: 0.38em; min-width: 0; }
+  .am-ai > span:not(.ms):not(.am-btn) { white-space: nowrap; }
+  .am-ai small { white-space: normal; }
+  .am-ic { width: 1.9em; height: 1.9em; border-radius: 0.5em; background: #2E2E2E; display: grid; place-items: center; }
+  .am-ic .ms { font-size: 1.25em; color: #BDBDBD; }
+  .am-t { font-size: 1.15em; font-weight: 700; }
+  .am-sub { color: #A3A3A3; font-size: 0.95em; }
+  .am-ai { display: flex; align-items: center; gap: 0.35em; color: #B9C7F5; font-size: 0.95em; }
+  .am-ai > .ms { flex: none; font-size: 1.05em; color: #8DA6FF; font-variation-settings: "FILL" 1, "wght" 500, "GRAD" 0, "opsz" 24; }
+  .am-ai b { color: #fff; }
+  .am-mute { color: #8A8A8A; }
+  .am-in { padding-left: 0.9em; }
+  .am-btn { margin-left: auto; flex: none; font-size: 0.85em; font-weight: 700; color: #fff; background: #262626; border: 1px solid #4A4A4A; border-radius: 999px; padding: 0.35em 0.75em; }
+  .am-ai small { color: #9A9A9A; font-style: italic; font-size: 0.78em; }
+  .crowd { margin-top: clamp(32px, 5vw, 56px); }
+  .crowd svg { width: 100%; height: auto; display: block; max-width: 100%; }
+
+  /* podcast + footer */
+  .pod { width: min(560px, 100%); margin-inline: auto; display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 18px 22px; }
+  @media (max-width: 640px) { .pod { grid-template-columns: 1fr; } }
+  .play { width: 56px; height: 56px; border-radius: 50%; background: var(--orange); color: #fff; border: 0; display: grid; place-items: center; cursor: pointer; }
+  .play svg { width: 22px; height: 22px; }
+  .pod b { font-family: var(--display); font-size: 1.1rem; display: block; }
+  .pod span { color: var(--ink-2); font-size: 0.92rem; }
+  .pod-text { display: grid; grid-template-columns: minmax(0, 1fr); gap: 2px; min-width: 0; }
+  .pod .feed { margin-top: 6px; font-size: 0.85rem; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+  .copy-feed { font: inherit; font-family: var(--display); font-weight: 700; font-size: 0.8rem; color: var(--orange-ink); background: var(--orange-soft); border: 0; border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+  .copy-feed:hover { background: #FFDCC6; }
+  .pod .feed-url { display: block; margin-top: 4px; width: fit-content; max-width: 100%; overflow-wrap: anywhere; user-select: all; }
+  .pod code { font-size: 0.78rem; background: var(--bg-2); padding: 2px 6px; border-radius: 6px; }
+  .cta-band { text-align: center; display: grid; gap: 18px; justify-items: center; }
+  .foot { padding-block: 36px; padding-left: var(--gx); padding-right: var(--gxr); border-top: 1px solid var(--line); font-size: 0.88rem; color: var(--ink-2); }
+  .foot .in { display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+  .foot a { text-decoration: none; }
+  .foot .sp { margin-left: auto; }
+
+  /* motion */
+  .js .rv { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .js .rv.on { opacity: 1; transform: none; }
+  .js .rv.d1 { transition-delay: 0.1s; } .js .rv.d2 { transition-delay: 0.2s; } .js .rv.d3 { transition-delay: 0.3s; }
+  .pl { will-change: transform; }
+  @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
+  /* staged chips in the hero */
+  .js .st { opacity: 0; transform: translateY(18px) scale(0.96); transition: opacity 0.5s ease, transform 0.5s ease; }
+  .js .st.on { opacity: 1; }
+
+  /* ===== PALETTES. Each band carries its own ink/card tokens so cards and text re-color with it. ===== */
+  .band.solid { --ink: #fff; --ink-2: rgba(255,255,255,0.82); --ink-3: rgba(255,255,255,0.6); --line: rgba(255,255,255,0.22); --card: rgba(255,255,255,0.12); --orange-soft: rgba(255,255,255,0.18); --orange-ink: #fff; --blue-soft: rgba(255,255,255,0.18); --blue-ink: #fff; --bg-2: rgba(255,255,255,0.1); --bg-3: rgba(255,255,255,0.1); color: #fff; }
+  .band.solid .eyebrow { color: rgba(255,255,255,0.75); }
+  .band.solid .btn.p { background: #fff; color: var(--dark); }
+  .band.solid .ic.o, .band.solid .ic.b, .band.solid .tick i, .band.solid .viewbar b { background: rgba(255,255,255,0.16); color: #fff; }
+  .band.solid .drop { border-color: rgba(255,255,255,0.6); }
+  .band.solid .chat { box-shadow: none; }
+  .band.solid .msg.ai { background: rgba(255,255,255,0.14); }
+  .band.solid .msg.me { background: #fff; color: var(--dark); }
+  .band.solid .roi em { color: #fff; }
+  .band.solid .fmt > span:not(.nowall), .band.solid .platforms span, .band.solid .shot { background: rgba(255,255,255,0.12); }
+  .band.ink { --ink: #F2EFEA; --ink-2: #B9B4AC; --ink-3: #8C867D; --line: #2A2D33; --card: #16181C; --orange-soft: #3A2417; --blue-soft: #16233F; --bg-2: #16181C; --bg-3: #16181C; --orange-ink: #FF9A5C; --blue-ink: #8FB0FF; color: #F2EFEA; }
+  .band.ink .msg.ai { background: #1E2127; }
+  .band.ink .shot img { border-color: var(--line); }
+  .band.ink.c1 .grad { background: none; -webkit-text-fill-color: #FF9A5C; color: #FF9A5C; }
+  .band.ink.c1 .chip { background: #1E2436; border-color: #2C3448; color: #F2EFEA; }
+  .band.ink.c1 .chip.q { color: #B9B4AC; }
+  .chip .cm { color: #FF9A5C !important; font-size: 22px; font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 24; }
+  .band.ink.c1 .orbit .sat { background: #1E2436; border-color: #2C3448; color: #F2EFEA; }
+  .band.ink.c1 .figure .ph { background: rgba(0,0,0,0.5); color: #B9B4AC; }
+
+  /* Shared: white page, black Meet Stash, one strong "ask" chapter, cream Quality, black Privacy */
+  .band { background: #fff; }
+  .c2 { background: #0E0F12; }
+  .c6 { background: #FFF4EA; }
+  .c7 { background: var(--dark); }
+  .c9 { background: #F3F6FD; }
+  /* 1 · Orange opening, blue ask */
+  html[data-pal="1"] .c1 { background: var(--orange); }
+  html[data-pal="1"] .c4 { background: var(--blue); }
+  /* 2 · Blue opening, orange ask */
+  html[data-pal="2"] .c1 { background: var(--blue); }
+  html[data-pal="2"] .c4 { background: var(--orange); }
+  /* 3 · Ink opening (deep navy), blue ask; Meet Stash goes cream so black is not twice in a row */
+  html[data-pal="3"] .c1 { background: var(--ink-bg); }
+  html[data-pal="3"] .c2 { background: #FFF4EA; }
+  html[data-pal="3"] .c4 { background: var(--blue); }
+  /* 4 · Peach opening (soft, dark text), blue ask */
+  html[data-pal="4"] .c1 { background: #FFD9BF; }
+  html[data-pal="4"] .c4 { background: var(--blue); }
+  /* 5 · Butter opening (soft yellow, dark text), orange ask */
+  html[data-pal="5"] .c1 { background: #FFE38A; }
+  html[data-pal="5"] .c4 { background: var(--orange); }
+  html[data-pal="4"] .c1 .eyebrow, html[data-pal="5"] .c1 .eyebrow { color: var(--orange-ink); }
+  html[data-pal="4"] .c1 .grad, html[data-pal="5"] .c1 .grad { background: none; -webkit-text-fill-color: var(--orange-ink); color: var(--orange-ink); }
+  html[data-pal="4"] .c1 .chip, html[data-pal="5"] .c1 .chip { background: #fff; border-color: transparent; }
+  html[data-pal="4"] .c1 .orbit .sat, html[data-pal="5"] .c1 .orbit .sat { background: #fff; }
+  html[data-pal="4"] .c1 .ai-row span, html[data-pal="5"] .c1 .ai-row span { background: rgba(255,255,255,0.7); color: var(--orange-ink); }
+  html[data-pal="5"] .c1 .ai-row span { color: #7A4A00; }
+  html[data-pal="5"] .c1 .eyebrow, html[data-pal="5"] .c1 .grad { -webkit-text-fill-color: #7A4A00; color: #7A4A00; }
+  html[data-pal="4"] .c1 .lede, html[data-pal="5"] .c1 .lede { color: #4A3B2A; }
+  /* the solid hero tweaks (white text on a strong color) */
+  .band.solid .grad { background: none; -webkit-text-fill-color: #fff; color: #fff; }
+  .band.solid .chip { background: rgba(255,255,255,0.94); color: #1C1A17; border-color: transparent; }
+  .band.solid .chip .ms { color: var(--orange); }
+  .band.solid.c1 .chip .ms { color: #1C1A17; }
+  .band.solid .chip.q { color: #5E5952; }
+  .band.solid .chip.q i { background: var(--blue); }
+  .band.solid .figure .ph { background: rgba(0,0,0,0.45); color: #fff; border-color: rgba(255,255,255,0.5); }
+  .band.solid .ai-row span { background: rgba(255,255,255,0.18); color: #fff; }
+  .band.solid .orbit .sat { background: rgba(255,255,255,0.94); color: #1C1A17; }
+  .band.solid .orbit .ring { border-color: rgba(255,255,255,0.45); }
+  .band.solid .logo-ph { color: #5E5952; }
+  .band.solid .phone { box-shadow: 0 30px 80px rgba(0,0,0,0.45); }
+  .band.solid.c2 .viewbar > span { color: rgba(255,255,255,0.8); }
+  .band.solid.c2 .viewbar b { background: rgba(255,255,255,0.1); color: #FF9A5C; }
+  .pal { position: fixed; left: 50%; bottom: calc(14px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 58; display: flex; gap: 4px; background: #1C1A17; padding: 5px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .pal button { border: 0; background: transparent; color: #CFC9BF; font: inherit; font-family: var(--display); font-weight: 700; font-size: 0.8rem; padding: 7px 12px; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+  .pal button[aria-pressed="true"] { background: #fff; color: #1C1A17; }
+  @media (max-width: 640px) { .pal button { padding: 7px 9px; font-size: 0.72rem; } }
+  /* ===== The falling note ===== */
+  .leaf { position: fixed; left: 0; top: 0; z-index: 40; width: 236px; pointer-events: none; will-change: transform, opacity; opacity: 0; }
+  .leaf .paper { background: #fff; color: #1C1A17; border-radius: 14px; box-shadow: 0 24px 60px rgba(40,25,10,0.22), 0 2px 6px rgba(0,0,0,0.08); padding: 14px 16px 16px; display: grid; gap: 8px; border: 1px solid #ECE5DB; position: relative; }
+  .leaf .paper::before { content: ""; position: absolute; left: 14px; right: 14px; top: 0; height: 3px; border-radius: 0 0 3px 3px; background: var(--grad); }
+  .leaf .ttl { font-family: var(--display); font-weight: 800; font-size: 1.05rem; display: flex; align-items: center; gap: 8px; }
+  .leaf .ttl small { font-family: var(--body); font-weight: 400; font-size: 0.7rem; color: #8C867D; }
+  .leaf .body { font-size: 0.8rem; color: #5E5952; line-height: 1.4; }
+  .leaf .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .leaf .tag { font-family: var(--display); font-weight: 700; font-size: 0.68rem; padding: 3px 9px; border-radius: 999px; background: var(--orange-soft); color: var(--orange-ink); opacity: 0; transform: translateY(6px) scale(0.9); transition: opacity 0.4s ease, transform 0.4s ease; }
+  .leaf .tag.b { background: var(--blue-soft); color: var(--blue-ink); }
+  .leaf[data-stage="1"] .tag:nth-child(1), .leaf[data-stage="2"] .tag:nth-child(1), .leaf[data-stage="3"] .tag:nth-child(1), .leaf[data-stage="4"] .tag:nth-child(1), .leaf[data-stage="5"] .tag:nth-child(1), .leaf[data-stage="6"] .tag:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+  .leaf[data-stage="1"] .tag:nth-child(2), .leaf[data-stage="2"] .tag:nth-child(2), .leaf[data-stage="3"] .tag:nth-child(2), .leaf[data-stage="4"] .tag:nth-child(2), .leaf[data-stage="5"] .tag:nth-child(2), .leaf[data-stage="6"] .tag:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.25s; }
+  .leaf[data-stage="1"] .tag:nth-child(3), .leaf[data-stage="2"] .tag:nth-child(3), .leaf[data-stage="3"] .tag:nth-child(3), .leaf[data-stage="4"] .tag:nth-child(3), .leaf[data-stage="5"] .tag:nth-child(3), .leaf[data-stage="6"] .tag:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.5s; }
+  .leaf[data-stage="7"] .tag { opacity: 1; transform: none; transition-delay: 0s; }
+  .leaf .tether { position: absolute; left: 100%; top: 18px; display: flex; align-items: center; opacity: 0; transform: translateX(-10px); transition: opacity 0.4s ease, transform 0.5s ease; }
+  .leaf .tether i { width: 0; height: 2px; background: var(--blue); display: block; transition: width 0.5s ease 0.1s; }
+  .leaf .tether b { width: 44px; height: 44px; border-radius: 12px; background: #fff; border: 2px solid var(--blue); color: var(--blue-ink); display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 0.8rem; box-shadow: 0 10px 24px rgba(47,111,237,0.2); }
+  .leaf[data-stage="2"] .tether.ai, .leaf[data-stage="3"] .tether.ai { opacity: 1; transform: none; }
+  .pbubble { position: absolute; left: 62%; top: 2%; width: min(240px, 44%); background: var(--blue); color: #fff; border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 0.82rem; line-height: 1.4; box-shadow: 0 14px 30px rgba(47,111,237,0.25); transform-origin: bottom left; }
+  .pbubble b { display: block; font-family: var(--display); margin-bottom: 3px; }
+  .pbubble .a { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 0.78rem; opacity: 0.92; }
+  .js .pbubble.rv { transform: scale(0.6) translateY(20px); }
+  .js .pbubble.rv.on { transform: none; }
+  .leaf .spark { position: absolute; right: -14px; top: -14px; width: 44px; height: 44px; border-radius: 50%; background: var(--blue); color: #fff; display: grid; place-items: center; font-size: 1.1rem; box-shadow: 0 0 0 0 rgba(47,111,237,0.5); opacity: 0; transform: scale(0.4); transition: opacity 0.35s ease, transform 0.45s cubic-bezier(.2,1.4,.4,1); }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(47,111,237,0.55); } 100% { box-shadow: 0 0 0 22px rgba(47,111,237,0); } }
+  .leaf .connected { font-size: 0.74rem; color: var(--blue-ink); font-weight: 700; font-family: var(--display); opacity: 0; transition: opacity 0.4s ease 0.3s; }
+  .leaf[data-stage="2"] .connected, .leaf[data-stage="3"] .connected { opacity: 1; }
+  .leaf .bubble { position: absolute; left: 50%; transform: translateX(-50%) translateY(8px); top: calc(100% + 10px); width: 240px; background: var(--blue); color: #fff; border-radius: 16px 16px 16px 4px; padding: 10px 14px; font-size: 0.82rem; line-height: 1.4; opacity: 0; transition: opacity 0.4s ease, transform 0.4s ease; }
+  .leaf .bubble b { display: block; font-family: var(--display); margin-bottom: 3px; }
+  .leaf .bubble .a { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.3); font-size: 0.78rem; opacity: 0.92; }
+  .leaf .land { position: absolute; inset: 0; border-radius: 14px; box-shadow: 0 0 0 3px var(--orange); opacity: 0; transition: opacity 0.3s; }
+  .leaf[data-stage="6"] .land { opacity: 1; }
+
+  /* Claude link on the card: sits on the card's left, with a current running along it, a glow and sparkles */
+  .leaf .tether.ai { left: auto; right: 100%; flex-direction: row-reverse; transform: translateX(10px); top: 22px; }
+  .leaf .tether.ai i { position: relative; height: 3px; border-radius: 2px; background: linear-gradient(90deg, #D97757, #F2702A); overflow: hidden; box-shadow: 0 0 10px rgba(217,119,87,0.7); }
+  .leaf .tether.ai i em { position: absolute; top: -2px; left: -14px; width: 14px; height: 7px; border-radius: 4px; background: radial-gradient(closest-side, #fff, rgba(255,255,255,0)); }
+  .leaf[data-stage="2"] .tether.ai i, .leaf[data-stage="3"] .tether.ai i { width: 44px; }
+  .leaf[data-stage="2"] .tether.ai i em, .leaf[data-stage="3"] .tether.ai i em { animation: current 1.1s linear 0.6s infinite; }
+  @keyframes current { from { left: 44px; } to { left: -14px; } }
+  .leaf .tether.ai b { position: relative; width: 50px; height: 50px; border-radius: 14px; border: 2px solid #D97757; background: #fff; box-shadow: 0 10px 26px rgba(217,119,87,0.35); }
+  .leaf .tether.ai b .cl { width: 30px; height: 30px; }
+  .leaf[data-stage="2"] .tether.ai b, .leaf[data-stage="3"] .tether.ai b { animation: claudeGlow 1.8s ease-out 0.5s infinite; }
+  .leaf[data-stage="2"] .tether.ai b .cl, .leaf[data-stage="3"] .tether.ai b .cl { animation: claudeSpin 1.2s cubic-bezier(.2,1.2,.4,1) 0.25s 1 both; }
+  @keyframes claudeGlow { 0% { box-shadow: 0 10px 26px rgba(217,119,87,0.35), 0 0 0 0 rgba(217,119,87,0.55); } 70% { box-shadow: 0 10px 26px rgba(217,119,87,0.35), 0 0 0 16px rgba(217,119,87,0); } 100% { box-shadow: 0 10px 26px rgba(217,119,87,0.35), 0 0 0 0 rgba(217,119,87,0); } }
+  @keyframes claudeSpin { from { transform: rotate(-120deg) scale(0.4); } to { transform: none; } }
+  .leaf .sp { position: absolute; display: block; text-decoration: none; opacity: 0; }
+  .leaf .sp svg { width: 100%; height: 100%; display: block; fill: #F2A23A; filter: drop-shadow(0 0 3px rgba(242,162,58,0.9)); }
+  .leaf .sp.s1 { width: 14px; height: 14px; left: -12px; top: -10px; }
+  .leaf .sp.s2 { width: 10px; height: 10px; right: -8px; top: -12px; }
+  .leaf .sp.s3 { width: 12px; height: 12px; left: -10px; bottom: -8px; }
+  .leaf[data-stage="2"] .sp.s1, .leaf[data-stage="3"] .sp.s1 { animation: twinkle 1.6s ease-in-out 0.7s infinite; }
+  .leaf[data-stage="2"] .sp.s2, .leaf[data-stage="3"] .sp.s2 { animation: twinkle 1.6s ease-in-out 1.2s infinite; }
+  .leaf[data-stage="2"] .sp.s3, .leaf[data-stage="3"] .sp.s3 { animation: twinkle 1.6s ease-in-out 1.6s infinite; }
+  @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.3) rotate(0deg); } 45% { opacity: 1; transform: scale(1) rotate(45deg); } 70% { opacity: 0.6; transform: scale(0.8) rotate(70deg); } }
+  /* one bright sweep across the card when Claude connects */
+  .leaf .shine { position: absolute; inset: 0; border-radius: 14px; overflow: hidden; pointer-events: none; }
+  .leaf .shine::before { content: ""; position: absolute; top: -20%; bottom: -20%; width: 45%; left: -60%; background: linear-gradient(100deg, rgba(255,255,255,0), rgba(255,226,200,0.85), rgba(255,255,255,0)); transform: skewX(-18deg); }
+  .leaf[data-stage="2"] .shine::before { animation: sweep 1.3s ease 0.35s 2; }
+  @keyframes sweep { from { left: -60%; } to { left: 120%; } }
+  .leaf .connected { display: flex; align-items: center; gap: 6px; color: #C2613F; }
+  .leaf .connected .cs { width: 12px; height: 12px; fill: #D97757; }
+  .leaf[data-stage="2"] .connected .cs, .leaf[data-stage="3"] .connected .cs { animation: twinkle 1.6s ease-in-out 0.9s infinite; }
+  /* real logos on the orbit tiles */
+  .orbit .sat { gap: 3px; align-content: center; }
+  .orbit .sat .lg { width: 28px; height: 28px; color: #1C1A17; }
+  .orbit .sat em { font-style: normal; font-size: 0.64rem; line-height: 1; }
+  .orbit .sat.claude { transition: box-shadow 0.4s ease, border-color 0.4s ease; }
+  .claude-live .orbit .sat.claude { border-color: #D97757; animation: claudeGlow 1.8s ease-out infinite; }
+  .peer .pl-lg { width: 22px; height: 22px; flex: none; color: #1C1A17; }
+  @media (max-width: 820px) { .leaf { width: 200px; } .leaf .bubble { width: 200px; } .leaf .body { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .leaf { display: none; } }
+  .mock { display: none; position: fixed; left: 50%; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); z-index: 55; background: var(--ink); color: #fff; font-size: 0.72rem; padding: 5px 12px; border-radius: 999px; opacity: 0.85; pointer-events: none; }
+  /* Shown only if someone opens this WEBSITE as a home-screen app (site.js adds .is-standalone) */
+  .standalone-note { display: none; }
+  .is-standalone .standalone-note { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 16px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 90; padding: 12px 16px max(12px, env(safe-area-inset-bottom, 0px)); background: #1C1A17; color: #F2EFEA; text-align: center; font-size: 14px; }
+  .standalone-note p { margin: 0; }
+  .standalone-note a { color: #fff; font-weight: 700; }
+</style>
+  <script src="/site.js?v=3" defer></script>
 </head>
 <body>
-  <div class="glow" aria-hidden="true">
-    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span>
-  </div>
+<!-- Shown only if someone opens this WEBSITE as a home-screen app (site.js). -->
+<div class="standalone-note" role="note">
+  <p>This icon opens the Stash <strong>website</strong>, not the app.</p>
+  <a data-app-href="/" href="https://app.stash.info/">Open the Stash app</a>
+</div>
 
-  <!-- Shown only if someone opens this WEBSITE as a home-screen app (site.js). -->
-  <div class="standalone-note" role="note">
-    <p>This icon opens the Stash <strong>website</strong>, not the app.</p>
-    <a class="btn btn-primary btn-sm" data-app-href="/">Open the Stash app</a>
+<span class="mock">Mockup</span>
+<svg class="wire" id="wire" aria-hidden="true"><path class="w-out" pathLength="1"/><path class="w-back" pathLength="1"/></svg>
+<div class="leaf" id="leaf" data-stage="0" aria-hidden="true">
+  <div class="paper">
+    <span class="land"></span>
+    <span class="shine"></span>
+    <span class="tether ai"><i><em></em></i><b><svg class="cl" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"></path></svg><s class="sp s1"><svg viewBox="0 0 24 24"><path d="M12 0c.6 5.6 2.4 7.6 12 12-9.6 4.4-11.4 6.4-12 12-.6-5.6-2.4-7.6-12-12 9.6-4.4 11.4-6.4 12-12z"/></svg></s><s class="sp s2"><svg viewBox="0 0 24 24"><path d="M12 0c.6 5.6 2.4 7.6 12 12-9.6 4.4-11.4 6.4-12 12-.6-5.6-2.4-7.6-12-12 9.6-4.4 11.4-6.4 12-12z"/></svg></s><s class="sp s3"><svg viewBox="0 0 24 24"><path d="M12 0c.6 5.6 2.4 7.6 12 12-9.6 4.4-11.4 6.4-12 12-.6-5.6-2.4-7.6-12-12 9.6-4.4 11.4-6.4 12-12z"/></svg></s></b></span>
+    <div class="ttl">Trip to Italy <small>just now</small></div>
+    <div class="body">Verona 2 nights, then Cortina. Hotel Villa Cortina, <mark class="hit">booking 48-2211</mark>, ask for the lake side room. Mark says do the Alpe di Siusi hike.</div>
+    <div class="tags"><span class="tag">Note</span><span class="tag b">Stash: Travel</span><span class="tag">#travel</span></div>
+    <div class="connected"><svg class="cs" viewBox="0 0 24 24"><path d="M12 0c.6 5.6 2.4 7.6 12 12-9.6 4.4-11.4 6.4-12 12-.6-5.6-2.4-7.6-12-12 9.6-4.4 11.4-6.4 12-12z"/></svg>Claude is connected</div>
+    <div class="bubble q3"><b>"What was that hotel we stayed at in Cortina?"</b><span class="a">Hotel Villa Cortina, Via Roma. Booking 48-2211, from your Trip to Italy table.</span></div>
   </div>
+</div>
 
-  <header class="topbar">
-    <a class="brand" href="/?home" aria-label="Stash home">
-      <img src="/img/logo.png" alt="" width="36" height="36">
-      <span>Stash</span>
+<header class="nav">
+  <div class="in">
+    <a class="brand" href="#top" aria-label="Stash home">
+      <img src="/img/home/stash-nav.png" alt="">
+      <span><span class="stash-mark t1">Stash</span><span class="t2" style="display:block">by <span class="ms-mark">Mind<span class="share">share</span></span></span></span>
     </a>
-    <nav class="topnav" aria-label="Account">
-      <a class="btn btn-neon btn-sm" data-app-href="/" href="/">Open Stash</a>
+    <nav class="links" id="site-menu" aria-label="Site">
+      <details>
+        <summary>2nd Brain ▾</summary>
+        <div class="menu">
+          <a href="#notes">Notes<small>A real editor</small></a>
+          <a href="#tasks">Tasks<small>With AI help</small></a>
+          <a href="#more">Events<small>Repeats, reminders, outcomes</small></a>
+          <a href="#capture">Resources<small>People, places, things</small></a>
+          <a href="#more">Trackers<small>Life, logged</small></a>
+        </div>
+      </details>
+      <details>
+        <summary>Features ▾</summary>
+        <div class="menu">
+          <a href="#sharing">Sharing<small>People and AIs</small></a>
+          <a href="#ai">AI Inside<small>Ask anything you saved</small></a>
+          <a href="#ai">API &amp; MCP<small>Bring your own AI</small></a>
+          <a href="#formats">Open Format<small>Markdown, HTML, OKF</small></a>
+          <a href="#privacy">Access Control<small>You decide who sees what</small></a>
+          <a href="#privacy">Privacy<small>Locked means locked</small></a>
+          <a href="#tasks">Kanban<small>Drag a card, the task updates</small></a>
+          <a href="#more">Graph<small>See how your notes connect</small></a>
+        </div>
+      </details>
+      <a href="#pricing">Pricing</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn g sm" href="waitlist.html">Try Free</a>
+      <a class="btn p sm" href="https://app.stash.info/" data-app-href="/">Open Stash</a>
     </nav>
-  </header>
+    <a class="btn p sm m-cta" href="waitlist.html">Try Free</a>
+    <button class="burger" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu"><span class="ms" aria-hidden="true">menu</span></button>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="logo-wrap">
-        <img class="logo" src="/img/logo.png" alt="Stash logo" width="240" height="240">
-      </div>
-      <p class="badge"><span class="dot" aria-hidden="true"></span>Coming soon</p>
-      <h1>Stash <span class="grad">everything.</span></h1>
-      <p class="lede">
-        Your notes, tasks, events and ideas in one place.
-        Capture in seconds, and find it the moment you need it.
-      </p>
-      <p class="gate-note">Invite only, for now.</p>
-      <div class="cta">
-        <a class="btn btn-primary btn-lg" href="/waitlist.html">Get Invite</a>
-      </div>
-    </section>
-  </main>
+<!-- CHAPTER 1 · RELIEF -->
+<section class="band hero c1" id="top">
+  <div class="in">
+    <div class="hero-top">
+      <h1 id="headline">Is info hitting you from <span class="grad">all directions?</span></h1>
+      <p class="lede">Names, codes, appointments, lists, half-ideas. Your head was never meant to hold all of it. <b>Get it out of your head and into Stash.</b></p>
+    </div>
 
-  <footer class="footer">
-    <span>© <span data-year>2026</span> Stash</span>
-    <a href="/contact.html">Contact us</a>
-  </footer>
+    <div class="scene">
+      <div class="floaters left">
+        <span class="chip pl st" data-p="0.10" data-at="0"><i></i>Tasks</span>
+        <span class="chip pl st" data-p="-0.14" data-at="0"><i></i>Notes</span>
+        <span class="chip pl st" data-p="0.18" data-at="0.18"><i></i>Events</span>
+        <span class="chip pl st" data-p="-0.08" data-at="0.36"><i></i>Contacts</span>
+        <span class="chip pl st" data-p="0.12" data-at="0.54"><i></i>Trackers</span>
+        <span class="chip pl st" data-p="-0.10" data-at="0.7"><span class="ms cm">mic</span>Meetings</span>
+        <span class="chip pl st" data-p="0.14" data-at="0.85"><span class="ms cm">graphic_eq</span>Brain Dump</span>
+      </div>
+      <div class="figure">
+        <img class="person" src="/img/home/hero-1.webp" alt="A woman glancing up, thinking hard">
+      </div>
+      <div class="floaters right">
+        <span class="chip q pl st" data-p="-0.12" data-at="0"><i></i>"What's my Airbnb code?"</span>
+        <span class="chip q pl st" data-p="0.16" data-at="0"><i></i>"My partner's boss's name?"</span>
+        <span class="chip q pl st" data-p="-0.10" data-at="0.2"><i></i>"When is the dentist?"</span>
+        <span class="chip q pl st" data-p="0.14" data-at="0.4"><i></i>"Bike lock is 3903"</span>
+        <span class="chip q pl st" data-p="-0.16" data-at="0.6"><i></i>"Pick up groceries"</span>
+        <span class="chip q pl st" data-p="0.12" data-at="0.75"><i></i>"Add bread to the grocery list"</span>
+        <span class="chip q pl st" data-p="-0.12" data-at="0.88"><i></i>"I did 45 mins cardio today"</span>
+      </div>
+    </div>
+
+    <div class="hero-sub rv">
+      <h2>Say it. Paste it. Done.</h2>
+      <p class="subhead">You dump it. Stash sorts it.</p>
+      <p class="lede" style="text-align:center">One box. Type it or say it. AI figures out whether it is a note, a task, an event, a person or a tracker reading, names it, tags it, and files it.</p>
+      <div class="ai-row">
+        <span>Auto file</span><span>Auto title</span><span>Auto tag</span><span>Smart tags: Important, Decision, Idea</span><span>Image captions</span>
+      </div>
+      <div class="rec-m">
+        <p>Or record</p>
+        <div><span class="chip"><span class="ms cm" aria-hidden="true">mic</span>Meetings</span><span class="chip"><span class="ms cm" aria-hidden="true">graphic_eq</span>Brain Dump</span></div>
+      </div>
+      <div class="types-m">
+        <p>Sorted into</p>
+        <div><span class="chip"><i></i>Tasks</span><span class="chip"><i></i>Notes</span><span class="chip"><i></i>Events</span><span class="chip"><i></i>Contacts</span><span class="chip"><i></i>Trackers</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CHAPTER 1b · THEN IT GETS INTERESTING -->
+<section class="band brain" id="brain">
+  <div class="in">
+    <div class="asset">
+      <div class="rv">
+        <h2>Turn the pile into a second brain.</h2>
+        <p class="lede" style="margin-top:14px"><b class="lead">For you.</b> Infinite memory for everything you want to keep. Ask it for anything, to find what you saved or to get help with what's next. It's always one tap or one "Hey Siri" away.</p>
+        <p class="lede" style="margin-top:14px"><b class="lead">For your AI.</b> No more clueless agents asking you for the same things. Connect Claude, ChatGPT, Grok, Muse or any AI. <u class="ul">You choose what they can see</u>, and locked notes stay private with end-to-end encryption.</p>
+      </div>
+      <div class="orbit rv d1">
+        <div class="ring"></div>
+        <img class="core" src="/img/home/stash-icon.png" alt="Stash">
+        <span class="sat claude" style="left:8%; top:50%"><svg class="lg" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"></path></svg><em>Claude</em></span>
+        <span class="sat" style="left:50%; top:8%"><svg class="lg" aria-hidden="true" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59 5.59 0 0010.831 1C8.39.995 6.224 2.546 5.473 4.838A5.553 5.553 0 001.76 7.496a5.487 5.487 0 00.691 6.5 5.416 5.416 0 00.477 4.502c1.217 2.09 3.662 3.165 6.05 2.66A5.586 5.586 0 0013.168 23c2.443.006 4.61-1.546 5.361-3.84a5.553 5.553 0 003.715-2.66 5.488 5.488 0 00-.693-6.497v.001zm-8.381 11.558a4.199 4.199 0 01-2.675-.954c.034-.018.093-.05.132-.074l4.44-2.53a.71.71 0 00.364-.623v-6.176l1.877 1.069c.02.01.033.029.036.05v5.115c-.003 2.274-1.87 4.118-4.174 4.123zM4.192 17.78a4.059 4.059 0 01-.498-2.763c.032.02.09.055.131.078l4.44 2.53c.225.13.504.13.73 0l5.42-3.088v2.138a.068.068 0 01-.027.057L9.9 19.288c-1.999 1.136-4.552.46-5.707-1.51h-.001zM3.023 8.216A4.15 4.15 0 015.198 6.41l-.002.151v5.06a.711.711 0 00.364.624l5.42 3.087-1.876 1.07a.067.067 0 01-.063.005l-4.489-2.559c-1.995-1.14-2.679-3.658-1.53-5.63h.001zm15.417 3.54l-5.42-3.088L14.896 7.6a.067.067 0 01.063-.006l4.489 2.557c1.998 1.14 2.683 3.662 1.529 5.633a4.163 4.163 0 01-2.174 1.807V12.38a.71.71 0 00-.363-.623zm1.867-2.773a6.04 6.04 0 00-.132-.078l-4.44-2.53a.731.731 0 00-.729 0l-5.42 3.088V7.325a.068.068 0 01.027-.057L14.1 4.713c2-1.137 4.555-.46 5.707 1.513.487.833.664 1.809.499 2.757h.001zm-11.741 3.81l-1.877-1.068a.065.065 0 01-.036-.051V6.559c.001-2.277 1.873-4.122 4.181-4.12.976 0 1.92.338 2.671.954-.034.018-.092.05-.131.073l-4.44 2.53a.71.71 0 00-.365.623l-.003 6.173v.002zm1.02-2.168L12 9.25l2.414 1.375v2.75L12 14.75l-2.415-1.375v-2.75z"></path></svg><em>ChatGPT</em></span>
+        <span class="sat" style="left:50%; top:92%"><svg class="lg" aria-hidden="true" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815"></path></svg><em>Grok</em></span>
+        <span class="sat" style="left:92%; top:50%"><svg class="lg" aria-hidden="true" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.91 3.869C6.777 3.869 7.396 4.546 7.396 5.607 7.396 6.669 7.225 7.626 6.941 9.659 6.738 11.084 6.389 13.258 6.243 14.162 6.523 13.628 7.178 12.378 7.294 12.144 8.666 9.375 10.096 6.901 10.508 6.246 11.054 5.372 11.535 5.021 12.278 5.021 12.664 5.022 13.124 5.217 13.352 5.477 13.66 5.829 13.725 6.398 13.714 7.019 13.698 7.97 13.574 9.486 13.405 11.177 13.33 11.929 13.185 13.466 13.087 14.496 13.965 12.925 15.591 10.035 16.246 9.025 16.817 8.146 17.392 7.579 18.164 7.579 18.83 7.579 19.651 8.05 19.603 9.302 19.531 11.149 19.264 15.174 19.143 16.979 19.96 15.79 21.033 14.029 21.436 13.367 21.842 12.698 22.26 12.157 22.894 12.139 23.544 12.12 23.979 12.562 23.999 13.244 24.019 13.927 23.612 14.694 23.072 15.565 22.486 16.511 21.831 17.523 21.033 18.468 20.236 19.413 19.502 20.131 18.384 20.131 17.382 20.131 16.677 19.465 16.628 18.246 16.602 17.607 16.723 16.234 16.814 15.16 16.92 13.917 17.048 12.717 17.137 11.923 16.256 13.535 14.402 16.912 13.568 18.23 12.752 19.52 12.355 19.974 11.493 19.975 10.631 19.975 10.253 19.354 10.241 18.42 10.227 17.407 10.988 11.324 11.246 9.297 10.828 10.191 9.801 12.385 9.157 13.69 8.534 14.953 7.489 17.135 6.73 18.393 6.184 19.298 5.57 19.975 4.66 19.975 3.75 19.975 3.236 19.363 3.236 18.379 3.236 17.395 3.521 15.756 3.827 13.723 3.98 12.739 4.155 11.667 4.352 10.53 4.496 9.708 4.746 8.26 4.9 7.371 4.2 8.461 2.941 10.423 2.558 11.014 2.131 11.671 1.749 12.15 1.115 12.15 0.416 12.15 0 11.605 0 10.971 0 10.337 0.322 9.848 0.846 8.988 1.518 7.883 2.726 6.377 3.388 5.586 4.168 4.654 4.947 3.869 5.91 3.869Z" fill="url(#muse-grad-o)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="muse-grad-o" x1="31.979" x2="5.981" y1="26.171" y2="-3.014"><stop offset=".255" stop-color="#0082FB"></stop><stop offset=".697" stop-color="#0064E0"></stop><stop offset="1" stop-color="#0040DC"></stop></linearGradient></defs></svg><em>Muse</em></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 · WELCOME -->
+<section class="band warm c2" id="capture">
+  <div class="in">
+    <div class="split">
+      <div class="phone-fan rv">
+        <div class="fan-pair">
+          <div class="phone back"><img src="/img/home/phone-tasks.png" alt="The Stash Tasks screen: tasks grouped by priority, from Reserve Upper Pines campsite to Pick up a bear canister"></div>
+          <div class="phone front"><img src="/img/home/phone-notes.png" alt="Stash on a phone: the Notes screen with recent notes like Yosemite Trip Itinerary and 1:1 with Priya, and the Ask box at the bottom"></div>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">Meet Stash</p>
+        <h2 class="rv">Notes, tasks, events, contacts and trackers. One app, one box.</h2>
+        <p class="lede rv d1" style="margin-top:14px">Stash is the everyday second brain. It looks like a simple notes app and it stays that simple, until you want more.</p>
+        <div class="viewbar rv d2" aria-label="Views in Stash">
+          <span><b><span class="ms">description</span></b>Notes</span><span><b><span class="ms">check_box</span></b>Tasks</span><span><b><span class="ms">event</span></b>Events</span><span><b><span class="ms">person</span></b>People</span><span><b><span class="ms">show_chart</span></b>Trackers</span><span><b><span class="ms">layers</span></b>Entities</span>
+        </div>
+      </div>
+    </div>
+    <div class="grid3" style="margin-top:40px">
+      <div class="card rv"><span class="ic o"><span class="ms">edit_note</span></span><h3>Super simple</h3><p>At heart, Stash is a simple notes and tasks app. You get real value without touching AI or any of the fancy features.</p></div>
+      <div class="card rv d1"><span class="ic b"><span class="ms">devices</span></span><h3>Sync across all your devices.</h3><p>Phone, tablet, laptop or desktop.</p>
+        <div class="plats"><span><img src="/img/home/install-icon-ios.png" alt="">iOS</span><span><img src="/img/home/install-icon-android.png" alt="">Android</span><span><img src="/img/home/install-icon-windows.png" alt="">Windows</span><span><img src="/img/home/install-icon-macos.png" alt="">macOS</span></div>
+      </div>
+      <div class="card rv d2"><span class="ic o"><span class="ms">cloud_off</span></span><h3>Works offline</h3><p>Your notes and tasks are kept on your device too, so the basics keep working without a connection. AI features need one.</p></div>
+      <div class="card rv" id="formats"><span class="ic b"><span class="ms">file_export</span></span><h3>Open formats. Open API.</h3><p>Stash plays well with others. Your notes are never locked in, and any app or AI can connect through the open API.</p>
+        <div class="fmt"><span>HTML</span><span>Markdown</span><span>CSV</span><span>TXT</span><span>OKF</span><span class="nowall"><span class="x"><span class="ms">fence</span></span><s>Walled garden</s></span></div>
+      </div>
+      <div class="card rv d1"><span class="ic o"><span class="ms">lock</span></span><h3>End-to-end encryption</h3><p>Lock any note or task with one tap. Locked items stay private, even from AI.</p></div>
+      <div class="card rv d2"><span class="ic b"><span class="ms">auto_awesome</span></span><h3>Writing and task help</h3><p>AI summarizes and rewrites your notes, breaks big tasks into steps, and can hand work off to an agent.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4 · WHAT'S IN IT FOR ME -->
+<section class="band cool c4" id="ai">
+  <div class="in">
+    <div class="head">
+      <div class="roi rv">R.O.<em>You</em></div>
+      <h2 class="rv d1">Get a return on what you know.</h2>
+      <p class="lede rv d2">Connect the dots from all you've saved. Ask from inside Stash, or bring your own AI. Either way the answer comes from your life, not the internet's.</p>
+    </div>
+    <!-- Part 1: voice, three small chats -->
+    <div class="split voice">
+      <div class="voice-card rv">
+        <h3>Use it with your favorite voice: Siri, Claude, ChatGPT, or Stash itself.</h3>
+        <div class="ask-bubble" id="askb"><b><span class="si"></span>Ask Stash</b>"What is the booking number for Hotel Villa Cortina?"<span class="a">48-2211. It is in your Trip to Italy note.</span></div>
+        <img src="/img/home/hero-2.webp" alt="A woman asking her watch a question">
+      </div>
+      <div class="minis">
+        <div class="mini rv d1">
+          <div class="msg me">"What was that hotel we stayed at in Cortina?"</div>
+          <div class="msg ai">Hotel Villa Cortina, Via Roma. Booking 48-2211, from your Trip to Italy table.</div>
+        </div>
+        <div class="mini rv d2">
+          <div class="msg me">"Who did I meet at the conference and what did they want?"</div>
+          <div class="msg ai">Four people. Priya from Lumen wants a demo, Marcus asked about the API. Two follow-ups are still open.</div>
+        </div>
+        <div class="mini rv d3">
+          <div class="msg me">"Dentist, 2pm tomorrow."</div>
+          <div class="msg ai">Added to your Events: Dentist, tomorrow at 2:00 pm. Reminder set for 1:15.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Part 2: deep inference through MCP -->
+    <div class="deep">
+      <div class="head" style="margin-bottom:28px;text-align:center;margin-inline:auto;justify-items:center">
+        <h2 class="rv">Deep inference. Deep value.</h2>
+        <p class="subhead rv">From your 2nd brain</p>
+        <p class="lede rv d1">Use Stash's built-in AI or connect the AI of your choice. It reads what you saved, reasons over all of it, and writes back.</p>
+      </div>
+      <div class="mcp rv d1">
+        <div class="peers">
+          <span class="peer"><img src="/img/home/stash-icon.png" alt="">Stash</span>
+          <span class="peer"><svg class="pl-lg" aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"></path></svg>Claude</span>
+          <span class="peer"><svg class="pl-lg" aria-hidden="true" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59 5.59 0 0010.831 1C8.39.995 6.224 2.546 5.473 4.838A5.553 5.553 0 001.76 7.496a5.487 5.487 0 00.691 6.5 5.416 5.416 0 00.477 4.502c1.217 2.09 3.662 3.165 6.05 2.66A5.586 5.586 0 0013.168 23c2.443.006 4.61-1.546 5.361-3.84a5.553 5.553 0 003.715-2.66 5.488 5.488 0 00-.693-6.497v.001zm-8.381 11.558a4.199 4.199 0 01-2.675-.954c.034-.018.093-.05.132-.074l4.44-2.53a.71.71 0 00.364-.623v-6.176l1.877 1.069c.02.01.033.029.036.05v5.115c-.003 2.274-1.87 4.118-4.174 4.123zM4.192 17.78a4.059 4.059 0 01-.498-2.763c.032.02.09.055.131.078l4.44 2.53c.225.13.504.13.73 0l5.42-3.088v2.138a.068.068 0 01-.027.057L9.9 19.288c-1.999 1.136-4.552.46-5.707-1.51h-.001zM3.023 8.216A4.15 4.15 0 015.198 6.41l-.002.151v5.06a.711.711 0 00.364.624l5.42 3.087-1.876 1.07a.067.067 0 01-.063.005l-4.489-2.559c-1.995-1.14-2.679-3.658-1.53-5.63h.001zm15.417 3.54l-5.42-3.088L14.896 7.6a.067.067 0 01.063-.006l4.489 2.557c1.998 1.14 2.683 3.662 1.529 5.633a4.163 4.163 0 01-2.174 1.807V12.38a.71.71 0 00-.363-.623zm1.867-2.773a6.04 6.04 0 00-.132-.078l-4.44-2.53a.731.731 0 00-.729 0l-5.42 3.088V7.325a.068.068 0 01.027-.057L14.1 4.713c2-1.137 4.555-.46 5.707 1.513.487.833.664 1.809.499 2.757h.001zm-11.741 3.81l-1.877-1.068a.065.065 0 01-.036-.051V6.559c.001-2.277 1.873-4.122 4.181-4.12.976 0 1.92.338 2.671.954-.034.018-.092.05-.131.073l-4.44 2.53a.71.71 0 00-.365.623l-.003 6.173v.002zm1.02-2.168L12 9.25l2.414 1.375v2.75L12 14.75l-2.415-1.375v-2.75z"></path></svg>ChatGPT</span>
+        </div>
+        <div class="claude-win">
+          <div class="cw-bar"><span class="cw-dot"></span><span class="cw-dot"></span><span class="cw-dot"></span><b>Claude</b><em>Stash connected</em></div>
+          <div class="cw-me">Look at all my travel itineraries and trip notes and help me plan a trip to Italy based on the things I like to do and the type of places I stay at.</div>
+          <div class="cw-tool">Reading 6 itineraries, 14 trip notes and your Hotels tracker…</div>
+          <div class="cw-ai"><i>✱</i><p>Happy to. Two quick questions first: how long a trip, and what is your budget per night?</p></div>
+          <div class="cw-me">10 days in late May. Around $250 a night.</div>
+          <div class="cw-ai"><i>✱</i><p>Your notes say small family-run hotels with a view, one long hike per trip, and no big museums after day two. The Dolomites come up twice as "next time". So: Verona 2 nights, Cortina 4 nights with the Alpe di Siusi hike Mark recommended, then Lake Garda 3 nights. Three hotels per stop, all under $250. Save it to your Travel stash with the booking tasks?</p></div>
+          <div class="cw-me">Yes, and remind me to book Cortina first.</div>
+        </div>
+        <div class="peers">
+          <span class="peer"><svg class="pl-lg" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="#1C1A17"/></svg>Dot</span>
+          <span class="peer"><svg class="pl-lg" aria-hidden="true" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.27 15.29l7.978-5.897c.391-.29.95-.177 1.137.272.98 2.369.542 5.215-1.41 7.169-1.951 1.954-4.667 2.382-7.149 1.406l-2.711 1.257c3.889 2.661 8.611 2.003 11.562-.953 2.341-2.344 3.066-5.539 2.388-8.42l.006.007c-.983-4.232.242-5.924 2.75-9.383.06-.082.12-.164.179-.248l-3.301 3.305v-.01L9.267 15.292M7.623 16.723c-2.792-2.67-2.31-6.801.071-9.184 1.761-1.763 4.647-2.483 7.166-1.425l2.705-1.25a7.808 7.808 0 00-1.829-1A8.975 8.975 0 005.984 5.83c-2.533 2.536-3.33 6.436-1.962 9.764 1.022 2.487-.653 4.246-2.34 6.022-.599.63-1.199 1.259-1.682 1.925l7.62-6.815"></path></svg>Grok</span>
+          <span class="peer"><svg class="pl-lg" aria-hidden="true" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5.91 3.869C6.777 3.869 7.396 4.546 7.396 5.607 7.396 6.669 7.225 7.626 6.941 9.659 6.738 11.084 6.389 13.258 6.243 14.162 6.523 13.628 7.178 12.378 7.294 12.144 8.666 9.375 10.096 6.901 10.508 6.246 11.054 5.372 11.535 5.021 12.278 5.021 12.664 5.022 13.124 5.217 13.352 5.477 13.66 5.829 13.725 6.398 13.714 7.019 13.698 7.97 13.574 9.486 13.405 11.177 13.33 11.929 13.185 13.466 13.087 14.496 13.965 12.925 15.591 10.035 16.246 9.025 16.817 8.146 17.392 7.579 18.164 7.579 18.83 7.579 19.651 8.05 19.603 9.302 19.531 11.149 19.264 15.174 19.143 16.979 19.96 15.79 21.033 14.029 21.436 13.367 21.842 12.698 22.26 12.157 22.894 12.139 23.544 12.12 23.979 12.562 23.999 13.244 24.019 13.927 23.612 14.694 23.072 15.565 22.486 16.511 21.831 17.523 21.033 18.468 20.236 19.413 19.502 20.131 18.384 20.131 17.382 20.131 16.677 19.465 16.628 18.246 16.602 17.607 16.723 16.234 16.814 15.16 16.92 13.917 17.048 12.717 17.137 11.923 16.256 13.535 14.402 16.912 13.568 18.23 12.752 19.52 12.355 19.974 11.493 19.975 10.631 19.975 10.253 19.354 10.241 18.42 10.227 17.407 10.988 11.324 11.246 9.297 10.828 10.191 9.801 12.385 9.157 13.69 8.534 14.953 7.489 17.135 6.73 18.393 6.184 19.298 5.57 19.975 4.66 19.975 3.75 19.975 3.236 19.363 3.236 18.379 3.236 17.395 3.521 15.756 3.827 13.723 3.98 12.739 4.155 11.667 4.352 10.53 4.496 9.708 4.746 8.26 4.9 7.371 4.2 8.461 2.941 10.423 2.558 11.014 2.131 11.671 1.749 12.15 1.115 12.15 0.416 12.15 0 11.605 0 10.971 0 10.337 0.322 9.848 0.846 8.988 1.518 7.883 2.726 6.377 3.388 5.586 4.168 4.654 4.947 3.869 5.91 3.869Z" fill="url(#muse-grad-p)"></path><defs><linearGradient gradientUnits="userSpaceOnUse" id="muse-grad-p" x1="31.979" x2="5.981" y1="26.171" y2="-3.014"><stop offset=".255" stop-color="#0082FB"></stop><stop offset=".697" stop-color="#0064E0"></stop><stop offset="1" stop-color="#0040DC"></stop></linearGradient></defs></svg>Muse</span>
+          <span class="mcp-note">or any AI that<br>speaks MCP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 5 · WISDOM & SHARING -->
+<section class="band c5" id="sharing">
+  <div class="in">
+    <div class="share3">
+      <div class="people rv">
+        <div class="pbubble rv d2"><b>"What hotel did Mark stay at in the Dolomites?"</b><span class="a">Rifugio Alpe di Tires. From the note Mark shared with you, "Dolomites weekend".</span></div>
+        <img src="/img/home/share-her.webp" alt="A woman asking her watch a question">
+      </div>
+      <div class="share-text">
+        <h2 class="rv">You read my mind.</h2>
+        <p class="lede rv d1" style="margin-top:14px">Tired of repeating yourself? Share once, and it stays current. It's shared wisdom from your friends, family and coworkers that's with you anywhere.</p>
+        <div class="ticks rv d2" style="margin-top:24px">
+          <div class="tick"><i>✓</i><div><b>Share with anyone.</b><span>Stash is free for everyone, so there is no "do you have the app?"</span></div></div>
+          <div class="tick"><i>✓</i><div><b>Kids, partners, friends, teams.</b><span>Share one note or a whole stash. Owner, contributor or viewer, your call.</span></div></div>
+          <div class="tick"><i>✓</i><div><b>Even locked notes.</b><span>End-to-end encrypted sharing with anyone who has set up their key.</span></div></div>
+          <div class="tick"><i>✓</i><div><b>You decide who sees what.</b><span>Locked items stay locked, even from AI.</span></div></div>
+        </div>
+      </div>
+      <div class="people mark rv d1">
+        <img src="/img/home/share-mark.webp" alt="Mark reading a shared note on his phone">
+      </div>
+    </div>
+    <div class="teams">
+      <div class="teams-fig rv"><img src="/img/home/hero-team.jpg" alt="A team lying in a circle with their heads together, smiling up at the camera"></div>
+      <div class="teams-text">
+        <h2 class="teams-h rv">Put your heads together.</h2>
+        <p class="lede rv d1">Stop re-sharing the same things over and over. Give every project its own stash, and the whole team always has the latest notes, tasks and decisions in one place. Less chasing, less spinning.</p>
+        <div class="ticks rv d2">
+          <div class="tick"><i>✓</i><div><b>A stash for every project.</b><span>Each one with its own members, so the right people see the right things.</span></div></div>
+          <div class="tick"><i>✓</i><div><b>Lists inside each stash.</b><span>Break a project into lists like Plans, Decisions, Vendors and To-dos.</span></div></div>
+          <div class="tick"><i>✓</i><div><b>Everyone stays current.</b><span>Change it once and the whole team sees it. No more "can you resend that?"</span></div></div>
+          <div class="tick"><i>✓</i><div><b>Assignments and notifications.</b><span>Assign tasks to teammates, and get notified when someone edits a note you follow.</span></div></div>
+        </div>
+        <div class="connect rv d3">
+          <div class="connect-logos"><span title="Slack"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52z"/><path fill="#E01E5A" d="M6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z"/><path fill="#36C5F0" d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834z"/><path fill="#36C5F0" d="M8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z"/><path fill="#2EB67D" d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834z"/><path fill="#2EB67D" d="M17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z"/><path fill="#ECB22E" d="M15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52z"/><path fill="#ECB22E" d="M15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg></span><span title="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#5865F2" d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg></span><span title="Stash"><img src="/img/home/stash-icon.png" alt=""></span></div>
+          <p><b>Bring Stash into the conversation.</b> Connect in Slack, Discord, Stash, or wherever your prompt lives.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 7 · PRIVACY -->
+<section class="band dark c7" id="privacy">
+  <div class="in">
+    <div class="head">
+      <h2 class="rv">Where is all your info going?</h2>
+      <p class="lede rv d1">Ten apps, ten providers, ten privacy policies. Or one place, with you holding the key.</p>
+    </div>
+    <div class="five rv">
+      <div><small>Privacy</small><h3>We can't open it.</h3><p>Lock any item with end-to-end encryption. There is no way in, not for us, not for AI. Forget your passphrase and it is gone. That is the only way to mean it.</p></div>
+      <div><small>Ownership</small><h3>It's yours.</h3><p>Export everything, any time: Google OKF, Markdown, HTML, CSV, iCal, vCard. Nothing is held hostage.</p></div>
+      <div><small>Control</small><h3>You pick what AI sees.</h3><p>AI reads your notes only when you ask, and never the locked ones. Data sent to AI is anonymized, so chats are not tied to you.</p></div>
+      <div><small>Independence</small><h3>Standards, not lock-in.</h3><p>Open formats in, open formats out. Connect any AI through MCP. Build on the Mindshare API.</p></div>
+      <div><small>Reliability</small><h3>Offline first.</h3><p>Stored on your device, synced to Google Firebase, the largest BaaS (Backend as a Service) provider. Works on a plane, in a basement, in a dead zone.*<span class="fn">*AI features do not work offline.</span></p></div>
+    </div>
+    <div class="stack rv d1">
+      <span>Runs on Google Cloud</span><span>AI by Google</span><span>Voice by OpenAI</span><span>Sign-in by Google Auth</span><span>Lock and share: wait, how? Only with people who have keys</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6 · QUALITY -->
+<section class="band warm c6" id="notes">
+  <div class="in">
+    <div class="head" style="text-align:center;margin-inline:auto;justify-items:center">
+      <h2 class="rv">A world-class note editor and tasks app built in.</h2>
+      <p class="lede rv d1">A real editor. Rich text, Markdown if that's your thing, tables, images you drag in, links between notes. Every change kept for three years, plus a recycle bin.</p>
+    </div>
+    <div class="laptop-stage rv">
+      <div class="laptop-photo">
+        <img class="lp" src="/img/home/laptop-photo2.webp" alt="">
+        <div class="screen" id="landing"><img class="win" src="/img/home/editor-window2.png" alt="The Italy Trip note open in the Stash desktop app, with a table of cities and hotels, a mountain photo and the Ask box"><span class="ask-ring" aria-hidden="true"></span></div>
+      </div>
+      <svg class="ai-line" aria-hidden="true"><path class="ln" pathLength="1"/><circle class="pulse" r="7"/><circle class="dot" r="4.5"/></svg>
+      <div class="ai-note">
+        <b class="ai-t"><span class="ms" aria-hidden="true">auto_awesome</span>AI Assistant</b>
+        <ul>
+          <li>Helps you write and summarize.</li>
+          <li>Or ask questions and make requests about your content.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="grid3" style="margin-top:48px">
+      <div class="card rv"><h3>Text, Markdown and HTML</h3><p>Import and export all three. Under the hood it is ProseMirror, which AIs read and write fluently.</p></div>
+      <div class="card drop rv d1"><span class="ms up" aria-hidden="true">cloud_upload</span><b>Drop your notes and tasks in</b><span style="color:var(--ink-2)">Import from Notion, Evernote, Apple Notes, Obsidian, Markdown, HTML, CSV</span></div>
+      <div class="card rv d2"><h3>History and restore</h3><p>Version history with side-by-side changes, and a recycle bin for the "oops" moments.</p></div>
+    </div>
+    <div class="take rv">
+      <p>And take everything with you, any time:</p>
+      <div class="fmt"><span>Google OKF</span><span>Markdown</span><span>HTML</span><span>CSV</span><span>iCal</span><span>vCard</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6b · TASKS -->
+<section class="band dark c7" id="tasks">
+  <div class="in">
+    <div class="tk-top">
+      <div class="tk-copy rv">
+        <p class="eyebrow">Tasks</p>
+        <h2>A to-do list that does some of the doing.</h2>
+        <p class="lede">On the surface it's simple: priorities, due dates and a box to check. Add a task by typing it, or just say it.</p>
+        <div class="tk-tip">
+          <span class="tk-ic"><span class="ms" aria-hidden="true">smart_toy</span></span>
+          <p><b>See the little robots?</b> Stash quietly spots the tasks AI can help with and marks them. You don't have to do anything until you're curious.</p>
+        </div>
+      </div>
+      <div class="tk-phw rv d1">
+        <div class="tk-ph"><div class="tk-scr">
+          <img src="/img/home/tasks-phone.png" alt="The Stash Tasks screen. Reserve Upper Pines campsite, Reserve flight to NYC and Finalize launch deck each have a small robot icon next to them.">
+          <i class="tk-bot" style="--x:63.8%;--y:26.4%" aria-hidden="true"></i><i class="tk-bot" style="--x:57.3%;--y:32.8%;--d:0.4s" aria-hidden="true"></i><i class="tk-bot" style="--x:80.2%;--y:45.6%;--d:0.8s" aria-hidden="true"></i>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="tk-sub rv">
+      <h3>Tap a robot and Stashbot takes it from there.</h3>
+      <p>Nothing happens on its own. You see the offer, then the plan, then the result.</p>
+    </div>
+    <ol class="tk-steps">
+      <li class="rv">
+        <figure><img src="/img/home/task-step1.png" alt="A task called Reserve Upper Pines campsite. A Stashbot banner says I think I can help with this task, with a Show me button."></figure>
+        <div class="tk-cap"><span class="tk-num">1</span><h4>Stashbot offers to help</h4><p>"I think I can help with this task." Tap Show me.</p></div>
+      </li>
+      <li class="rv d1">
+        <figure><img src="/img/home/task-step2.png" alt="Stashbot's plan for the task: break down reserving a campsite at Upper Pines into concrete subtasks, with a Do it button and a note that the task details will be sent to AI."></figure>
+        <div class="tk-cap"><span class="tk-num">2</span><h4>You see the plan first</h4><p>What it will do, and what it will send to AI. Nothing goes until you tap Do it.</p></div>
+      </li>
+      <li class="rv d2">
+        <figure><img src="/img/home/task-step3.png" alt="The task now has AI suggested steps, starting with Check Recreation.gov for the specific booking window."></figure>
+        <div class="tk-cap"><span class="tk-num">3</span><h4>The steps land in your task</h4><p>Check them off as you go. Steps AI can take on get their own robot.</p></div>
+      </li>
+    </ol>
+
+    <div class="tk-help">
+      <div class="tk-hcopy rv">
+        <h3>Bring your own helpers.</h3>
+        <p>Add the AIs you already use, like Claude, ChatGPT or Gemini. Add people, places and vendors too. Say what each one is good at, and Stash suggests the right helper for each task.</p>
+        <p>When it's time, one tap hands the task off, with everything it needs to know.</p>
+        <div class="tk-pills" aria-label="Kinds of helpers"><span><span class="ms" aria-hidden="true">smart_toy</span>AIs</span><span><span class="ms" aria-hidden="true">person</span>People</span><span><span class="ms" aria-hidden="true">location_on</span>Places</span><span><span class="ms" aria-hidden="true">storefront</span>Vendors</span></div>
+      </div>
+      <div class="tk-collage rv d1">
+        <figure class="tk-ui tk-fade tk-agent"><img src="/img/home/new-agent.png" alt="Adding a new agent called Claude in Stash: pick a type, start from a known AI like ChatGPT, Claude or Gemini, and note what it is good and not good at."></figure>
+        <figure class="tk-ui tk-hand"><img src="/img/home/claude-handoff.png" alt="A task called Reserve flight to NYC with a ready-made request for Claude Desktop and a Hand off to Claude Desktop button."></figure>
+      </div>
+    </div>
+
+    <div class="tk-board">
+      <figure class="tk-ui tk-dark rv"><img src="/img/home/kanban-board.png" alt="A Kanban board with Default List, Prep and Shopping columns of task cards."></figure>
+      <div class="tk-bcopy rv d1">
+        <h3>Lists or boards.</h3>
+        <p>Flip any stash into a Kanban board. Drag a card to another column and the task updates.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 8 · AND THEN SOME -->
+<section class="band c8" id="more">
+  <div class="in">
+    <div class="head">
+      <h2 class="rv">But wait, there's more.</h2>
+    </div>
+    <div class="more">
+      <div class="shot rv"><img src="/img/home/graph.png" alt="Graph of linked notes"><div><h3>2nd Brain Graph</h3><p>See how your notes connect. Link with [[ and follow the thread.</p></div></div>
+      <div class="shot rv d1"><img src="/img/home/trackers.png" alt="Trackers"><div><h3>Trackers</h3><p>Weight, sleep, mood, meds, expenses, home maintenance. Log in one line, chart it later.</p></div></div>
+      <div class="shot rv d2"><img src="/img/home/events-contacts.png" alt="Stash's week view: Friday to Monday columns of events, then a list with a bike ride on Sunday and dinner at Mark's on Monday"><div><h3>Events and Contacts</h3><p>Cross-link notes and tasks with Events and Contacts. Everything is connected.</p></div></div>
+      <div class="shot rv d3"><div class="res-mock" role="img" aria-label="Stash's resource types: Person, Agent, Place, Thing and Vendor, with Vendor selected, plus New Type">
+        <span class="rs-grid" aria-hidden="true">
+          <span class="rs"><span class="rs-b"><span class="ms">person</span></span>Person</span>
+          <span class="rs"><span class="rs-b"><span class="ms">smart_toy</span></span>Agent</span>
+          <span class="rs"><span class="rs-b"><span class="ms">location_on</span></span>Place</span>
+          <span class="rs"><span class="rs-b"><span class="ms">construction</span></span>Thing</span>
+          <span class="rs on"><span class="rs-b"><span class="ms">storefront</span></span>Vendor</span>
+          <span class="rs add"><span class="rs-b"><span class="ms">add</span></span>New Type</span>
+        </span>
+      </div><div><h3>Resources</h3><p>A Rolodex of assets which you and your agents can leverage to help solve problems and get things done.</p></div></div>
+      <div class="shot rv"><div class="ir-mock" role="img" aria-label="Stash's Interactive Reading panel: tips to say pause or rewind and to interrupt with questions, a progress bar, and rewind, mute and skip buttons">
+        <span class="ir-top" aria-hidden="true"><b>Interactive Reading</b><span class="ms">close</span></span>
+        <span class="ir-tips" aria-hidden="true"><span>&bull; Try commands like "pause", "stop", "fast forward", "rewind"</span><span>&bull; At any time, interrupt with questions about the text</span></span>
+        <span class="ir-bar" aria-hidden="true"></span>
+        <span class="ir-words" aria-hidden="true">0 / 182 words</span>
+        <span class="ir-btns" aria-hidden="true"><span class="ms">replay_10</span><span class="ms">mic_off</span><span class="ms">forward_10</span></span>
+      </div><div><h3>Interactive Reading</h3><p>Have any note read to you, and interrupt any time with questions about it. Like having an expert read it with you.</p></div></div>
+      <div class="shot rv d1"><img src="/img/home/ideation.png" alt="Stash on a phone starting a new Ideation session, with Brain Dump, Meeting and Ideation modes and Ideation selected"><div><h3>Ideation</h3><p>Brainstorm out loud with AI. An interactive experience where AI guides you through ideation, and the whole session is saved as a note.</p></div></div>
+      <div class="shot rv d2"><div class="audit-mock" role="img" aria-label="Here's what I did: Stash showing what its AI did to a note called Socrates. It tagged it #Memory, with an Undo tag button, and asked where it goes">
+        <span class="am-head" aria-hidden="true"><span class="ms">auto_awesome</span>Here's what I did&hellip;</span>
+        <div class="am-card" aria-hidden="true">
+          <span class="am-ic"><span class="ms">description</span></span>
+          <div class="am-body">
+            <b class="am-t">Socrates</b>
+            <span class="am-sub">You added it</span>
+            <span class="am-ai"><span class="ms">auto_awesome</span><span>I organized it in 2 ways <span class="am-mute">&middot;</span> <b>Hide &rsaquo;</b></span></span>
+            <span class="am-ai am-in"><span class="ms">auto_awesome</span><span>I tagged it #Memory</span><span class="am-btn">Undo tag</span></span>
+            <span class="am-ai am-in"><span class="ms">auto_awesome</span><span>I asked where it goes <small>&middot; you said it's fine</small></span></span>
+          </div>
+        </div>
+      </div><div><h3>AI Audit Trail</h3><p>Receipts of AI decisions. One-click undo.</p></div></div>
+      <div class="shot rv d3"><img src="/img/home/goals.png" alt="A goal called World Peace with five dated milestones"><div><h3>Goals</h3><p>Milestones per stash, with AI-suggested starter tasks.</p></div></div>
+    </div>
+    <div class="crowd split" style="align-items:center">
+      <div>
+        <h2 class="rv">Share with the world. Live.</h2>
+        <p class="lede rv d1" style="margin-top:14px">Publicly share a note or list with a link. Anyone can follow it, and when you change your mind, they see it. Your thinking, in public, still yours.</p>
+      </div>
+      <div class="crowd-scene rv d1">
+        <img class="person" src="/img/home/hero-share.webp" alt="">
+        <svg viewBox="150 60 500 240" aria-label="A crowd of readers">
+          <path d="M160 140 C240 120 240 120 300 140" fill="none" stroke="#F2702A" stroke-width="3" stroke-dasharray="6 8"/>
+          <g fill="#C9C1B6">
+            <circle cx="330" cy="150" r="22"/><path d="M290 300 C290 240 310 210 330 210 C350 210 370 240 370 300Z"/>
+            <circle cx="400" cy="130" r="22"/><path d="M360 300 C360 220 380 190 400 190 C420 190 440 220 440 300Z"/>
+            <circle cx="470" cy="155" r="22"/><path d="M430 300 C430 240 450 215 470 215 C490 215 510 240 510 300Z"/>
+            <circle cx="540" cy="135" r="22"/><path d="M500 300 C500 225 520 195 540 195 C560 195 580 225 580 300Z"/>
+            <circle cx="605" cy="160" r="22"/><path d="M565 300 C565 245 585 220 605 220 C625 220 645 245 645 300Z"/>
+          </g>
+          <g fill="#E3DCD2">
+            <circle cx="365" cy="100" r="18"/><circle cx="435" cy="90" r="18"/><circle cx="505" cy="105" r="18"/><circle cx="575" cy="95" r="18"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="grow split">
+      <div class="feed rv">
+        <div class="sources">
+          <span><span class="ms">upload_file</span>Drag &amp; drop</span>
+          <span><span class="ms">attach_file</span>Attachments</span>
+          <span><span class="ms">photo_camera</span>Photos</span>
+          <span><span class="ms">mic</span>Meetings</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#E01E5A" d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52z"/><path fill="#E01E5A" d="M6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313z"/><path fill="#36C5F0" d="M8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834z"/><path fill="#36C5F0" d="M8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312z"/><path fill="#2EB67D" d="M18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834z"/><path fill="#2EB67D" d="M17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312z"/><path fill="#ECB22E" d="M15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52z"/><path fill="#ECB22E" d="M15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>Slack</span>
+          <span><svg aria-hidden="true" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4.709 15.955l4.72-2.647.08-.23-.08-.128H9.2l-.79-.048-2.698-.073-2.339-.097-2.266-.122-.571-.121L0 11.784l.055-.352.48-.321.686.06 1.52.103 2.278.158 1.652.097 2.449.255h.389l.055-.157-.134-.098-.103-.097-2.358-1.596-2.552-1.688-1.336-.972-.724-.491-.364-.462-.158-1.008.656-.722.881.06.225.061.893.686 1.908 1.476 2.491 1.833.365.304.145-.103.019-.073-.164-.274-1.355-2.446-1.446-2.49-.644-1.032-.17-.619a2.97 2.97 0 01-.104-.729L6.283.134 6.696 0l.996.134.42.364.62 1.414 1.002 2.229 1.555 3.03.456.898.243.832.091.255h.158V9.01l.128-1.706.237-2.095.23-2.695.08-.76.376-.91.747-.492.584.28.48.685-.067.444-.286 1.851-.559 2.903-.364 1.942h.212l.243-.242.985-1.306 1.652-2.064.73-.82.85-.904.547-.431h1.033l.76 1.129-.34 1.166-1.064 1.347-.881 1.142-1.264 1.7-.79 1.36.073.11.188-.02 2.856-.606 1.543-.28 1.841-.315.833.388.091.395-.328.807-1.969.486-2.309.462-3.439.813-.042.03.049.061 1.549.146.662.036h1.622l3.02.225.79.522.474.638-.079.485-1.215.62-1.64-.389-3.829-.91-1.312-.329h-.182v.11l1.093 1.068 2.006 1.81 2.509 2.33.127.578-.322.455-.34-.049-2.205-1.657-.851-.747-1.926-1.62h-.128v.17l.444.649 2.345 3.521.122 1.08-.17.353-.608.213-.668-.122-1.374-1.925-1.415-2.167-1.143-1.943-.14.08-.674 7.254-.316.37-.729.28-.607-.461-.322-.747.322-1.476.389-1.924.315-1.53.286-1.9.17-.632-.012-.042-.14.018-1.434 1.967-2.18 2.945-1.726 1.845-.414.164-.717-.37.067-.662.401-.589 2.388-3.036 1.44-1.882.93-1.086-.006-.158h-.055L4.132 18.56l-1.13.146-.487-.456.061-.746.231-.243 1.908-1.312-.006.006z" fill="#D97757" fill-rule="nonzero"></path></svg>Claude</span>
+          <span><svg aria-hidden="true" fill="currentColor" fill-rule="evenodd" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.55 10.004a5.416 5.416 0 00-.478-4.501c-1.217-2.09-3.662-3.166-6.05-2.66A5.59 5.59 0 0010.831 1C8.39.995 6.224 2.546 5.473 4.838A5.553 5.553 0 001.76 7.496a5.487 5.487 0 00.691 6.5 5.416 5.416 0 00.477 4.502c1.217 2.09 3.662 3.165 6.05 2.66A5.586 5.586 0 0013.168 23c2.443.006 4.61-1.546 5.361-3.84a5.553 5.553 0 003.715-2.66 5.488 5.488 0 00-.693-6.497v.001zm-8.381 11.558a4.199 4.199 0 01-2.675-.954c.034-.018.093-.05.132-.074l4.44-2.53a.71.71 0 00.364-.623v-6.176l1.877 1.069c.02.01.033.029.036.05v5.115c-.003 2.274-1.87 4.118-4.174 4.123zM4.192 17.78a4.059 4.059 0 01-.498-2.763c.032.02.09.055.131.078l4.44 2.53c.225.13.504.13.73 0l5.42-3.088v2.138a.068.068 0 01-.027.057L9.9 19.288c-1.999 1.136-4.552.46-5.707-1.51h-.001zM3.023 8.216A4.15 4.15 0 015.198 6.41l-.002.151v5.06a.711.711 0 00.364.624l5.42 3.087-1.876 1.07a.067.067 0 01-.063.005l-4.489-2.559c-1.995-1.14-2.679-3.658-1.53-5.63h.001zm15.417 3.54l-5.42-3.088L14.896 7.6a.067.067 0 01.063-.006l4.489 2.557c1.998 1.14 2.683 3.662 1.529 5.633a4.163 4.163 0 01-2.174 1.807V12.38a.71.71 0 00-.363-.623zm1.867-2.773a6.04 6.04 0 00-.132-.078l-4.44-2.53a.731.731 0 00-.729 0l-5.42 3.088V7.325a.068.068 0 01.027-.057L14.1 4.713c2-1.137 4.555-.46 5.707 1.513.487.833.664 1.809.499 2.757h.001zm-11.741 3.81l-1.877-1.068a.065.065 0 01-.036-.051V6.559c.001-2.277 1.873-4.122 4.181-4.12.976 0 1.92.338 2.671.954-.034.018-.092.05-.131.073l-4.44 2.53a.71.71 0 00-.365.623l-.003 6.173v.002zm1.02-2.168L12 9.25l2.414 1.375v2.75L12 14.75l-2.415-1.375v-2.75z"></path></svg>ChatGPT</span>
+          <span><span class="ms">smart_toy</span>Your AI</span>
+        </div>
+        <svg class="funnel" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M50 0 C50 40 200 30 200 70"/><path d="M150 0 C150 40 200 40 200 70"/><path d="M250 0 C250 40 200 40 200 70"/><path d="M350 0 C350 40 200 30 200 70"/>
+        </svg>
+        <div class="into"><img src="/img/home/stash-icon.png" alt=""><div><b>Your 2nd brain</b><span class="meter"><i></i></span><small>Gets more useful with everything you add</small></div></div>
+      </div>
+      <div>
+        <h2 class="rv">Grow your brain.</h2>
+        <p class="lede rv d1" style="margin-top:14px">Drag and drop files, attachments and photos straight into Stash. Record a meeting and keep the notes. Send content from Slack, Claude, ChatGPT or your favorite AI. The more you add, the more value you get back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PODCAST + CTA -->
+<section class="band cool c9" id="podcast">
+  <div class="in" style="display:grid;gap:48px">
+    <div class="pod rv">
+      <button class="play" type="button" aria-label="Play Learn all about Stash"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button>
+      <div class="pod-text"><b>Learn all about Stash</b><span>18 minutes on why a second brain, and why now.</span>
+        <span class="feed">Or play in your own podcaster: <button class="copy-feed" type="button" data-url="https://feed.podbean.com/tdrees/feed.xml">Copy feed URL</button></span>
+        <code class="feed-url" hidden>https://feed.podbean.com/tdrees/feed.xml</code>
+      </div>
+    </div>
+    <div class="cta-band" id="pricing">
+      <p class="eyebrow">Pricing</p>
+      <h2 class="rv">Free base level. Paid plans starting at $1.99 a month.</h2>
+      <p class="lede rv d1">Token based, so you pay for what you use. Paid plans are coming soon.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center" class="rv d2" id="waitlist">
+        <a class="btn p" href="https://app.stash.info/" data-app-href="/" id="open">Open Stash</a>
+        <a class="btn g" href="waitlist.html">Get an invite</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="in">
+    <span>© 2026 <span class="ms-mark">Mind<span class="share">share</span></span>, Inc.</span>
+    <span><span class="stash-mark">Stash</span> is a product of <span class="ms-mark">Mind<span class="share">share</span></span></span>
+    <span class="sp"></span>
+    <a href="#privacy">Privacy</a><a href="#">Terms</a><a href="contact.html">Contact</a><a href="#">Mindshare</a>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var root = document.documentElement;
+    root.classList.add('js');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Headline swap
+
+    // Reveal on scroll
+    var rv = document.querySelectorAll('.rv');
+    if ('IntersectionObserver' in window && !reduce) {
+      var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+      rv.forEach(function (el) { io.observe(el); });
+    } else { rv.forEach(function (el) { el.classList.add('on'); }); }
+
+    // Gentle parallax on .pl elements (chips in the hero, the chat card)
+    var pl = Array.prototype.slice.call(document.querySelectorAll('.pl'));
+    if (!reduce && pl.length) {
+      var ticking = false;
+      function frame() {
+        var vh = window.innerHeight;
+        var narrow = window.innerWidth <= 820;
+        pl.forEach(function (el) {
+          if (narrow && el.closest('.scene')) { el.style.transform = ''; return; }
+          var r = el.getBoundingClientRect();
+          var c = (r.top + r.height / 2 - vh / 2) / vh; // -0.5..0.5 around center
+          var p = parseFloat(el.getAttribute('data-p') || '0');
+          el.style.transform = 'translateY(' + (c * p * 240).toFixed(1) + 'px)';
+        });
+        ticking = false;
+      }
+      function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      frame();
+    }
+
+    // Staged chips: more appear as you scroll through the hero scene
+    var st = Array.prototype.slice.call(document.querySelectorAll('.st'));
+    var scene = document.querySelector('.scene');
+    function stage() {
+      if (!scene) return;
+      var r = scene.getBoundingClientRect(), vh = window.innerHeight;
+      var prog = Math.min(1, Math.max(0, (vh * 0.85 - r.top) / (r.height * 0.9)));
+      st.forEach(function (el) { el.classList.toggle('on', prog >= parseFloat(el.getAttribute('data-at') || '0')); });
+    }
+    window.addEventListener('scroll', stage, { passive: true }); window.addEventListener('resize', stage); stage();
+
+    // Palette switcher
+    var PAL = { A: 'solid', B: 'drift', C: 'ink', D: 'solid' };
+    var solidBands = { '1': ['c1', 'c2', 'c4'], '2': ['c1', 'c2', 'c4'], '3': ['c1', 'c4'], '4': ['c2', 'c4'], '5': ['c2', 'c4'] };
+    var driftColors = { c1: '#FFFFFF', c2: '#FFE9DC', c3: '#FFF6D6', c4: '#E3ECFF', c5: '#F3E8FF', c6: '#E6F7F1', c7: '#0E0F12', c8: '#FFE4EC', c9: '#F3F6FD' };
+    var bands = Array.prototype.slice.call(document.querySelectorAll('.band'));
+    function applyPal(k) {
+      root.setAttribute('data-pal', k);
+      bands.forEach(function (b) {
+        var id = (b.className.match(/\bc\d\b/) || [''])[0];
+        b.classList.toggle('solid', !!(solidBands[k] && solidBands[k].indexOf(id) >= 0));
+        b.classList.toggle('ink', id === 'c7' || (k === '3' && id === 'c1'));
+      });
+      
+      
+      try { localStorage.setItem('stash-pal-v5', k); } catch (e) {}
+    }
+    function drift() {
+      if (root.getAttribute('data-pal') !== 'B') return;
+      var mid = window.innerHeight * 0.5, cur = null;
+      bands.forEach(function (b) { var r = b.getBoundingClientRect(); if (r.top <= mid && r.bottom > mid) cur = b; });
+      if (!cur) return;
+      var id = (cur.className.match(/\bc\d\b/) || ['c1'])[0];
+      document.body.style.backgroundColor = driftColors[id] || '#fff';
+    }
+    
+    
+    // Top bar: tinted ink while a dark band is under it, white otherwise
+    var nav = document.querySelector('.nav');
+    function navTint() {
+      var probe = nav.getBoundingClientRect().bottom + 1, cur = null;
+      bands.forEach(function (b) { var r = b.getBoundingClientRect(); if (r.top <= probe && r.bottom > probe) cur = b; });
+      nav.classList.toggle('over-dark', !!cur && (cur.classList.contains('ink') || cur.classList.contains('solid')));
+      root.style.setProperty('--glow', String(Math.max(0, 1 - window.pageYOffset / 220).toFixed(3)));
+    }
+    window.addEventListener('scroll', navTint, { passive: true }); window.addEventListener('resize', navTint);
+    setTimeout(navTint, 0);
+    var saved = '3';
+    applyPal(saved);
+
+
+    // ===== Laptop screen: bend the screen content to the lid's real shape (it is tilted back, so the top is narrower) =====
+    (function () {
+      var box = document.querySelector('.laptop-photo'); if (!box) return;
+      var img = box.querySelector('.lp'), scr = box.querySelector('.screen');
+      var IW = 1138, IH = 665, SW = 1000, SH = 553;
+      var Q = [[200, 72], [938, 72], [950, 487], [188, 487]]; // TL, TR, BR, BL of the screen in the photo
+      function warp() {
+        var bw = img.clientWidth, bh = img.clientHeight; if (!bw || !bh) return;
+        var p = Q.map(function (q) { return [q[0] / IW * bw, q[1] / IH * bh]; });
+        var x0 = p[0][0], y0 = p[0][1], x1 = p[1][0], y1 = p[1][1], x2 = p[2][0], y2 = p[2][1], x3 = p[3][0], y3 = p[3][1];
+        var sx = x0 - x1 + x2 - x3, sy = y0 - y1 + y2 - y3;
+        var dx1 = x1 - x2, dx2 = x3 - x2, dy1 = y1 - y2, dy2 = y3 - y2, den = dx1 * dy2 - dx2 * dy1;
+        var g = (sx * dy2 - dx2 * sy) / den, h = (dx1 * sy - sx * dy1) / den;
+        var a = x1 - x0 + g * x1, b = x3 - x0 + h * x3, c = x0, d = y1 - y0 + g * y1, e = y3 - y0 + h * y3, f = y0;
+        var m = [a / SW, d / SW, 0, g / SW, b / SH, e / SH, 0, h / SH, 0, 0, 1, 0, c, f, 0, 1];
+        scr.classList.add('warped');
+        scr.style.transform = 'matrix3d(' + m.map(function (v) { return +v.toFixed(8); }).join(',') + ')';
+        H = { a: a, b: b, c: c, d: d, e: e, f: f, g: g, h: h };
+        callout();
+      }
+      // ---- "AI Assistant" callout: ring the Ask bar on the screen, run a line from the Ask button to the note ----
+      var H = null, win = scr.querySelector('.win'), ring = scr.querySelector('.ask-ring');
+      var stage = box.parentNode, note = stage.querySelector('.ai-note'), svg = stage.querySelector('.ai-line');
+      var IMH = 548;                                             // editor screenshot height (765 x 548)
+      var BAR = { l: 125, t: 462, r: 640, b: 505 }, ASK = { x: 641, y: 483 }; // Ask bar, and where the line meets it (its right end, beside the Ask button)
+      function toPhoto(x, y) {                                   // screen px (1000 x 553) -> laptop photo px
+        var u = x / SW, v = y / SH, w = H.g * u + H.h * v + 1;
+        return { x: (H.a * u + H.b * v + H.c) / w, y: (H.d * u + H.e * v + H.f) / w };
+      }
+      function callout() {
+        if (!H || !win || !win.offsetHeight || !note || !svg) return;
+        var wh = win.offsetHeight, ww = win.offsetWidth, wl = (SW - ww) / 2, wt = SH - wh, k = wh / IMH;
+        ring.style.left = (wl + BAR.l * k) + 'px'; ring.style.top = (wt + BAR.t * k) + 'px';
+        ring.style.width = ((BAR.r - BAR.l) * k) + 'px'; ring.style.height = ((BAR.b - BAR.t) * k) + 'px';
+        ring.classList.add('ready');
+        var p = toPhoto(wl + ASK.x * k, wt + ASK.y * k);
+        var x1 = box.offsetLeft + p.x, y1 = box.offsetTop + p.y, x2, y2;
+        var t = note.querySelector('.ai-t');
+        if (note.offsetTop >= box.offsetTop + box.offsetHeight - 4) { // stacked (narrow): drop down to the note
+          x2 = Math.min(Math.max(x1, note.offsetLeft + 24), note.offsetLeft + note.offsetWidth - 24); y2 = note.offsetTop - 8;
+        } else {                                                  // side by side: run across to the title
+          x2 = note.offsetLeft - 12; y2 = note.offsetTop + t.offsetTop + t.offsetHeight / 2;
+        }
+        svg.querySelector('.ln').setAttribute('d', 'M' + x1.toFixed(1) + ' ' + y1.toFixed(1) + ' L' + x2.toFixed(1) + ' ' + y2.toFixed(1));
+        ['.dot', '.pulse'].forEach(function (q) { var c = svg.querySelector(q); c.setAttribute('cx', x1.toFixed(1)); c.setAttribute('cy', y1.toFixed(1)); });
+        svg.classList.add('ready');
+      }
+      if (img.complete) warp(); img.addEventListener('load', warp);
+      if (win) { if (win.complete) callout(); win.addEventListener('load', callout); }
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(callout);
+      window.addEventListener('load', warp);
+      window.addEventListener('resize', warp);
+    })();
+
+    // ===== Falling note: position keyed to chapters, so it stays in sync whatever the page length =====
+    var leaf = document.getElementById('leaf');
+    if (leaf && !reduce) {
+      // Each key: an element, a fraction through it (0 = top edge at viewport middle), and where the note sits (x,y in vw/vh), rotation, opacity, stage.
+      // rel: place the card next to an element instead of at a fixed screen spot (ax/ay = point on the element,
+      // dxw/dyh = offset in card widths/heights, dy = extra pixels; m = the same for narrow screens)
+      var NEAR = { sel: '.voice-card', ax: 1, ay: 0.76, dxw: 0.16, dyh: 0, dy: 0, m: { ax: 0.7, ay: 0.78, dxw: 0, dyh: 0, dy: 0 } };
+      var ABOVE_MARK = { sel: '.people.mark img', ax: 0.5, ay: 0, dxw: 0, dyh: -0.5, dy: -18 };
+      var UNDER_SAY = { sel: '.hero-sub h2', ax: 1, ay: 1, dxw: 0, dyh: 0.5, dy: 14 };
+      var KEYS = [
+        // (on phones the card stays out of the opening and first shows up just under "Say it. Paste it. Done.", then sorts itself)
+        { sel: '.hero-top', f: 0.0,  x: 80, y: 24, r: -3, o: 1, st: 0, nm: { o: 0 } },
+        { sel: '.scene',    f: 0.5,  x: 84, y: 40, r: 2,  o: 1, st: 0, nm: { o: 0 } },
+        { sel: '.hero-sub', f: 0.0,  x: 80, y: 36, r: -2, o: 1, st: 1, nm: { o: 0, st: 0, rel: UNDER_SAY } },
+        { sel: '.hero-sub', f: 0.3,  rel: UNDER_SAY, r: -2, o: 1, st: 1, only: 'n' },
+        { sel: '.asset',    f: 0.0,  x: 84, y: 30, r: 2,  o: 1, st: 1 },
+        { sel: '.asset',    f: 0.6,  x: 80, y: 28, r: -1, o: 1, st: 2 },
+        { sel: '#capture',  f: 0.1,  x: 82, y: 30, r: 1,  o: 1, st: 3 },
+        { sel: '#capture',  f: 0.75, x: 84, y: 32, r: -2, o: 1, st: 3 },
+        // R.O.You: drift toward the middle, settle beside her watch photo, then ask
+        { sel: '#ai',       f: 0.0,  x: 74, y: 36, r: 1,  o: 1, st: 7 },
+        // (on phones the watch photo reads fine on its own, so the card steps aside until "Deep inference")
+        { sel: '.voice',    f: 0.0,  rel: NEAR, r: -2, o: 1, st: 7, nm: { o: 0 } },
+        { sel: '.voice',    f: 0.12, rel: NEAR, r: -2, o: 1, st: 4, nm: { o: 0 } },
+        { sel: '.voice',    f: 0.8,  rel: NEAR, r: 1,  o: 1, st: 4, nm: { o: 0 } },
+        { sel: '.deep',     f: 0.1,  x: 88, y: 16, r: 2,  o: 1, st: 4 },
+        { sel: '.deep',     f: 0.8,  x: 88, y: 18, r: -1, o: 1, st: 4 },
+        // Sharing: sits above Mark and rides up off the screen with him as "Put your heads together" rolls in
+        { sel: '#sharing',  f: 0.0,  x: 86, y: 12, r: 0,  o: 1, st: 5 },
+        { sel: '.share3',   f: 0.2,  rel: ABOVE_MARK, r: -2, o: 1, st: 5 },
+        { sel: '.teams',    f: 0.2,  rel: ABOVE_MARK, r: 0,  o: 1, st: 5 },
+        { sel: '.teams',    f: 0.95, rel: ABOVE_MARK, r: 0,  o: 0, st: 5 }
+      ];
+      var keys = [];
+      function build() {
+        var narrow = window.innerWidth < 820;
+        keys = KEYS.filter(function (k) { return !k.only || (k.only === 'n') === narrow; }).map(function (k) {
+          if (narrow && k.nm) k = Object.assign({}, k, k.nm);
+          var el = document.querySelector(k.sel); if (!el) return null;
+          var top = el.getBoundingClientRect().top + window.pageYOffset;
+          return { y: top + k.f * el.offsetHeight, k: k };
+        }).filter(Boolean).sort(function (a, b) { return a.y - b.y; });
+      }
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function pos(k, vw, vh) {
+        if (!k.rel) return { x: k.x, y: k.y };
+        var R = vw < 820 && k.rel.m ? Object.assign({}, k.rel, k.rel.m) : k.rel;
+        var el = document.querySelector(R.sel); if (!el) return { x: 50, y: 50 };
+        var r = el.getBoundingClientRect(), w = leaf.offsetWidth, h = leaf.offsetHeight;
+        var cx = r.left + r.width * R.ax + R.dxw * w, cy = r.top + r.height * R.ay + R.dyh * h + R.dy;
+        return { x: cx / vw * 100, y: cy / vh * 100 };
+      }
+      function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; }
+      function place() {
+        if (!keys.length) return;
+        var vh = window.innerHeight, vw = window.innerWidth;
+        var y = window.pageYOffset + vh * 0.5;
+        var a = keys[0], b = keys[0];
+        for (var i = 0; i < keys.length; i++) { if (keys[i].y <= y) { a = keys[i]; b = keys[Math.min(i + 1, keys.length - 1)]; } }
+        var t = b.y === a.y ? 0 : ease(Math.min(1, Math.max(0, (y - a.y) / (b.y - a.y))));
+        var sway = Math.sin(window.pageYOffset / 420) * 14;
+        var pa = pos(a.k, vw, vh), pb = pos(b.k, vw, vh);
+        var x = lerp(pa.x, pb.x, t), yy = lerp(pa.y, pb.y, t), r = lerp(a.k.r, b.k.r, t) + sway * 0.18, o = lerp(a.k.o, b.k.o, t);
+        if (y < keys[0].y) { o = keys[0].k.o; }
+        if (y > keys[keys.length - 1].y) { o = 0; }
+        var w = leaf.offsetWidth, h = leaf.offsetHeight;
+        var px = Math.min(vw - w - 12, Math.max(12, vw * x / 100 - w / 2 + sway));
+        var py = vh * yy / 100 - h / 2;
+        leaf.style.transform = 'translate(' + px.toFixed(1) + 'px,' + py.toFixed(1) + 'px) rotate(' + r.toFixed(2) + 'deg)';
+        leaf.style.opacity = o.toFixed(3);
+        var st = (t < 0.5 ? a : b).k.st;
+        var prev = +leaf.getAttribute('data-stage');
+        if (String(st) !== leaf.getAttribute('data-stage')) {
+          leaf.setAttribute('data-stage', String(st)); root.classList.toggle('claude-live', st === 2);
+          var RANK = { 0: 0, 1: 1, 2: 2, 3: 3, 7: 3.5, 4: 4, 5: 5, 6: 6 };
+          if (st === 4 && RANK[prev] < 4) ask(true);
+          if (RANK[st] < 4) ask(false);
+        }
+        drawWire(st, vw, vh);
+      }
+      // ---- "Ask Stash": bubble pops in, a line runs to the card, the answer comes back ----
+      var askb = document.getElementById('askb'), wire = document.getElementById('wire');
+      var wOut = wire && wire.querySelector('.w-out'), wBack = wire && wire.querySelector('.w-back');
+      var timers = [], STEPS = [[0, 'ask-1'], [650, 'ask-2'], [1350, 'ask-3'], [1800, 'ask-4'], [2550, 'ask-5'], [4600, 'ask-6']];
+      if (askb) root.classList.add('ask-ready');
+      function ask(on) {
+        timers.forEach(clearTimeout); timers = [];
+        STEPS.forEach(function (p) { root.classList.remove(p[1]); });
+        if (!on || !askb) return;
+        STEPS.forEach(function (p) { timers.push(setTimeout(function () { root.classList.add(p[1]); drawWire(+leaf.getAttribute('data-stage'), window.innerWidth, window.innerHeight); }, p[0])); });
+      }
+      function drawWire(st, vw, vh) {
+        if (!wire || !askb) return;
+        var b = askb.getBoundingClientRect();
+        var hit = leaf.querySelector('mark.hit'), m = hit && hit.offsetParent ? hit.getBoundingClientRect() : null;
+        var c = leaf.getBoundingClientRect();
+        var x2 = m ? m.left - 4 : c.left, y2 = m ? m.top + m.height / 2 : c.top + c.height / 2;
+        var x1 = b.right - 18, y1 = b.bottom;
+        var ok = st === 4 && parseFloat(leaf.style.opacity || '1') > 0.5 && b.bottom > 0 && b.top < vh && Math.abs(x2 - x1) + Math.abs(y2 - y1) < vw * 0.6;
+        wire.classList.toggle('show', ok);
+        if (!ok) return;
+        var d1 = 'M' + x1 + ' ' + y1 + ' C' + x1 + ' ' + (y1 + 70) + ' ' + (x2 - 70) + ' ' + y2 + ' ' + x2 + ' ' + y2;
+        var d2 = 'M' + x2 + ' ' + y2 + ' C' + (x2 - 70) + ' ' + y2 + ' ' + x1 + ' ' + (y1 + 70) + ' ' + x1 + ' ' + y1;
+        wOut.setAttribute('d', d1); wBack.setAttribute('d', d2);
+      }
+      var busy = false;
+      function onS() { if (!busy) { busy = true; requestAnimationFrame(function () { place(); busy = false; }); } }
+      window.addEventListener('scroll', onS, { passive: true });
+      window.addEventListener('resize', function () { build(); place(); });
+      window.addEventListener('load', function () { build(); place(); });
+      build(); place();
+      document.querySelectorAll('.pal button').forEach(function (x) { x.addEventListener('click', function () { setTimeout(function () { build(); place(); }, 50); }); });
+    }
+
+    // Podcast: copy the feed address (falls back to showing it, selected, if copying is blocked)
+    document.querySelectorAll('.copy-feed').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var url = btn.getAttribute('data-url'), shown = btn.closest('.pod-text').querySelector('.feed-url');
+        function showIt() { shown.hidden = false; var r = document.createRange(); r.selectNodeContents(shown); var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(r); btn.textContent = 'Select and copy below'; }
+        try {
+          navigator.clipboard.writeText(url).then(function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy feed URL'; }, 1800); }, showIt);
+        } catch (e) { showIt(); }
+      });
+    });
+
+    // Phone menu button: open/close the links panel; a tap on a link, outside, or Escape closes it
+    var navEl = document.querySelector('.nav'), burger = document.querySelector('.burger'), menuPanel = document.getElementById('site-menu');
+    function setMenu(on) {
+      navEl.classList.toggle('open', on);
+      burger.setAttribute('aria-expanded', on ? 'true' : 'false');
+      burger.setAttribute('aria-label', on ? 'Close menu' : 'Menu');
+      burger.querySelector('.ms').textContent = on ? 'close' : 'menu';
+    }
+    if (burger && menuPanel) {
+      burger.addEventListener('click', function (e) { e.stopPropagation(); setMenu(!navEl.classList.contains('open')); });
+      menuPanel.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+      document.addEventListener('click', function (e) { if (!navEl.contains(e.target)) setMenu(false); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && navEl.classList.contains('open')) { setMenu(false); burger.focus(); } });
+      window.addEventListener('resize', function () { if (window.innerWidth > 760) setMenu(false); });
+    }
+
+    // close Product menu on outside click
+    document.addEventListener('click', function (e) {
+      document.querySelectorAll('.links details[open]').forEach(function (d) { if (!d.contains(e.target)) d.removeAttribute('open'); });
+    });
+    document.querySelectorAll('.links details').forEach(function (d) { d.addEventListener('toggle', function () { if (d.open) document.querySelectorAll('.links details[open]').forEach(function (o) { if (o !== d) o.removeAttribute('open'); }); }); });
+  })();
+</script>
 </body>
 </html>

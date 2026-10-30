@@ -26,3 +26,16 @@
 
 /img/*
   Cache-Control: public, max-age=86400
+
+# Only stash.info belongs in search results. The test copies (and Cloudflare preview links)
+# ask search engines not to list them, so they never compete with the real site.
+https://retsyn.app/*
+  X-Robots-Tag: noindex
+https://www.retsyn.app/*
+  X-Robots-Tag: noindex
+https://retsyn.ai/*
+  X-Robots-Tag: noindex
+https://www.retsyn.ai/*
+  X-Robots-Tag: noindex
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
