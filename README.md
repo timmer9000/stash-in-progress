@@ -35,6 +35,6 @@ Then open http://localhost:8090. Add `?home` to the address if you are signed in
 | `contact.html` | Contact-us form, captcha gated with Cloudflare Turnstile (posts to the invites API). The site never shows an email address. |
 | `site.css` / `site.js` | Shared styles and helpers |
 | `_headers` | Cloudflare caching rules |
-| `img/` | Images (the logo). |
+| `img/` | Images (the logo). `img/share-card.png` is the picture shown when someone shares a link to the site. |
 
 Big media such as video or podcast audio should not go in this repo. Host it on YouTube, Vimeo, Cloudflare Stream or R2 and embed or link it. Cloudflare Pages rejects any single file over 25 MB.
